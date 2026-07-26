@@ -6,41 +6,33 @@
     <title>Roberto Calderón Amorós | Portafolio Profesional</title>
     <meta
       name="description"
-      content="Portafolio profesional, docente y creativo: software, videojuegos, diseño, anatomía, biomecánica y proyectos multimedia."
+      content="Portafolio profesional de Roberto Calderón Amorós: software, videojuegos, diseño, simulación y proyectos multimedia."
     />
     <meta name="theme-color" content="#0f2747" />
-
-    <!-- Fonts -->
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
     <link
       href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap"
       rel="stylesheet"
     />
-
-    <!-- Icons -->
     <script src="https://unpkg.com/lucide@latest"></script>
 
     <style>
       :root {
         --bg: #eef3f9;
-        --surface: rgba(255, 255, 255, 0.72);
+        --surface: rgba(255, 255, 255, 0.76);
         --surface-solid: #ffffff;
-        --surface-2: #f7f9fd;
         --text: #0c1a2a;
         --muted: #5b6b7f;
         --primary: #0f2747;
         --primary-2: #184a8d;
         --accent: #4c87ff;
-        --accent-2: #9bc5ff;
         --border: rgba(15, 39, 71, 0.12);
         --shadow: 0 14px 40px rgba(11, 28, 55, 0.1);
         --shadow-soft: 0 10px 28px rgba(11, 28, 55, 0.08);
         --radius: 24px;
-        --radius-sm: 18px;
         --max: 1200px;
       }
-
       * {
         box-sizing: border-box;
       }
@@ -71,7 +63,6 @@
           linear-gradient(180deg, #f6f9fe 0%, #edf3fb 100%);
         min-height: 100vh;
       }
-
       a {
         color: inherit;
         text-decoration: none;
@@ -85,7 +76,6 @@
         margin: 0 auto;
       }
 
-      /* Top bar */
       .topbar {
         position: sticky;
         top: 0;
@@ -162,7 +152,6 @@
         background: white;
       }
 
-      /* Hero */
       .hero {
         padding: 28px 0 18px;
       }
@@ -224,23 +213,7 @@
         font-size: 1.06rem;
         line-height: 1.7;
         color: var(--muted);
-        max-width: 62ch;
-      }
-      .pill-row {
-        display: flex;
-        flex-wrap: wrap;
-        gap: 10px;
-        margin-top: 18px;
-      }
-      .pill {
-        padding: 10px 14px;
-        background: rgba(255, 255, 255, 0.72);
-        border: 1px solid rgba(15, 39, 71, 0.1);
-        border-radius: 999px;
-        font-weight: 600;
-        font-size: 0.92rem;
-        color: var(--primary);
-        box-shadow: 0 8px 20px rgba(11, 28, 55, 0.05);
+        max-width: 68ch;
       }
       .hero-actions {
         display: flex;
@@ -283,7 +256,6 @@
       }
       .profile-card,
       .metric-card,
-      .info-card,
       .section-card {
         background: rgba(255, 255, 255, 0.82);
         backdrop-filter: blur(18px);
@@ -323,22 +295,7 @@
         line-height: 1.65;
         font-size: 0.96rem;
       }
-      .profile-meta {
-        display: flex;
-        flex-wrap: wrap;
-        justify-content: center;
-        gap: 8px;
-      }
-      .profile-meta span {
-        padding: 8px 12px;
-        border-radius: 999px;
-        background: rgba(15, 39, 71, 0.06);
-        color: var(--primary);
-        font-weight: 700;
-        font-size: 0.83rem;
-      }
 
-      /* Stats */
       .stats {
         padding: 10px 0 4px;
       }
@@ -377,7 +334,6 @@
         line-height: 1.35;
       }
 
-      /* Sections */
       .section {
         padding: 18px 0;
       }
@@ -400,7 +356,6 @@
         max-width: 70ch;
         line-height: 1.6;
       }
-
       .section-card {
         padding: 22px;
       }
@@ -414,11 +369,24 @@
         color: var(--muted);
         line-height: 1.8;
         font-size: 1rem;
+        margin: 0;
+      }
+      .about-stack {
+        display: grid;
+        gap: 12px;
+      }
+      .callout {
+        border-radius: 20px;
+        padding: 16px 18px;
+        background: rgba(15, 39, 71, 0.04);
+        border: 1px solid rgba(15, 39, 71, 0.08);
+        color: var(--primary);
+        line-height: 1.65;
       }
       .bullets {
         display: grid;
         gap: 10px;
-        margin: 16px 0 0;
+        margin: 0;
         padding: 0;
         list-style: none;
       }
@@ -437,7 +405,6 @@
         margin-top: 3px;
         color: var(--primary-2);
       }
-
       .tag-cloud {
         display: flex;
         flex-wrap: wrap;
@@ -453,7 +420,6 @@
         font-size: 0.88rem;
       }
 
-      /* Filters */
       .filters {
         display: flex;
         flex-wrap: wrap;
@@ -480,7 +446,6 @@
         border-color: transparent;
       }
 
-      /* Portfolio cards */
       .portfolio-grid {
         display: grid;
         grid-template-columns: repeat(12, 1fr);
@@ -518,7 +483,8 @@
         color: white;
         position: relative;
       }
-      .thumb .type {
+      .thumb .type,
+      .thumb .count {
         display: inline-flex;
         align-items: center;
         gap: 8px;
@@ -528,14 +494,6 @@
         padding: 8px 11px;
         font-size: 0.82rem;
         font-weight: 800;
-      }
-      .thumb .count {
-        font-size: 0.82rem;
-        background: rgba(255, 255, 255, 0.12);
-        border: 1px solid rgba(255, 255, 255, 0.15);
-        border-radius: 999px;
-        padding: 8px 11px;
-        font-weight: 700;
       }
       .card-body {
         padding: 18px;
@@ -595,7 +553,6 @@
         display: none !important;
       }
 
-      /* Gallery */
       .gallery-grid {
         display: grid;
         grid-template-columns: repeat(12, 1fr);
@@ -642,7 +599,6 @@
         border: 1px solid rgba(255, 255, 255, 0.16);
       }
 
-      /* Footer */
       footer {
         padding: 24px 0 36px;
         color: var(--muted);
@@ -663,7 +619,6 @@
         color: var(--primary);
       }
 
-      /* Responsive */
       @media (max-width: 1024px) {
         .hero-grid,
         .two-col {
@@ -725,13 +680,11 @@
           </div>
           <div>
             <h1>Roberto Calderón Amorós</h1>
-            <p>Software · Educación · Diseño</p>
+            <p>Software · Educación · Simulación · Diseño</p>
           </div>
         </div>
         <nav class="nav" aria-label="Navegación principal">
           <a href="#sobre-mi">Sobre mí</a>
-          <a href="#formacion">Formación</a>
-          <a href="#experiencia">Experiencia</a>
           <a href="#portafolio">Portafolio</a>
           <a href="#multimedia">Multimedia</a>
           <a href="#contacto">Contacto</a>
@@ -745,25 +698,16 @@
           <div class="hero-grid">
             <div>
               <div class="eyebrow">
-                <i data-lucide="briefcase-business"></i>
-                Docente Universitario · Programador · Diseñador Gráfico
+                <i data-lucide="badge-check"></i> Bienvenido
               </div>
-              <h2>Roberto Calderón Amorós</h2>
+              <h2>
+                Un perfil que combina software, diseño, docencia y simulación.
+              </h2>
               <p class="subtitle">
-                Docente universitario, programador y diseñador gráfico con más
-                de 15 años de experiencia en educación superior, desarrollo de
-                software y experiencias audiovisuales interactivas. Integro
-                tecnología, creatividad y conocimiento médico para crear
-                soluciones de simulación y educación innovadoras.
+                Esta landing no repite tu CV: lo complementa. Aquí muestras lo
+                mejor de tu trabajo, ordenado por tipo de pieza y listo para ver
+                en segundos.
               </p>
-              <div class="pill-row">
-                <span class="pill">Docencia universitaria</span>
-                <span class="pill">Software & desarrollo</span>
-                <span class="pill">Videojuegos</span>
-                <span class="pill">Diseño gráfico</span>
-                <span class="pill">Anatomía / biomecánica</span>
-                <span class="pill">Simulación médica</span>
-              </div>
               <div class="hero-actions">
                 <a class="btn btn-primary" href="./CV.pdf" download>
                   <i data-lucide="download"></i> Descargar CV
@@ -777,18 +721,12 @@
             <aside class="hero-side">
               <div class="profile-card">
                 <div class="avatar">RC</div>
-                <h3>Roberto Calderón Amorós</h3>
+                <h3>Portafolio profesional</h3>
                 <p>
-                  Docente Universitario, Programador y Diseñador Gráfico con +15
-                  años integrando tecnología, creatividad y conocimiento médico
-                  en soluciones de simulación y educación innovadoras.
+                  Proyectos, piezas visuales, cursos y materiales de
+                  presentación reunidos en un solo lugar, con una estética
+                  limpia y técnica.
                 </p>
-                <div class="profile-meta">
-                  <span>💻 Sistemas</span>
-                  <span>🎨 Diseño</span>
-                  <span>⚕ Medicina</span>
-                  <span>🎮 Videojuegos</span>
-                </div>
               </div>
             </aside>
           </div>
@@ -799,21 +737,19 @@
         <div class="container stats-grid">
           <div class="metric-card">
             <div class="metric-icon"><i data-lucide="school"></i></div>
-            <div><strong>15+</strong><span>Años de experiencia</span></div>
-          </div>
-          <div class="metric-card">
-            <div class="metric-icon"><i data-lucide="book-open"></i></div>
-            <div><strong>40+</strong><span>Asignaturas impartidas</span></div>
+            <div><strong>15+</strong><span>Años de docencia</span></div>
           </div>
           <div class="metric-card">
             <div class="metric-icon"><i data-lucide="code-xml"></i></div>
-            <div>
-              <strong>10+</strong><span>Lenguajes de programación</span>
-            </div>
+            <div><strong>10+</strong><span>Tecnologías y stacks</span></div>
           </div>
           <div class="metric-card">
-            <div class="metric-icon"><i data-lucide="graduation-cap"></i></div>
-            <div><strong>3</strong><span>Licenciaturas</span></div>
+            <div class="metric-icon"><i data-lucide="gamepad-2"></i></div>
+            <div><strong>1</strong><span>Videojuego destacado</span></div>
+          </div>
+          <div class="metric-card">
+            <div class="metric-icon"><i data-lucide="book-open"></i></div>
+            <div><strong>3</strong><span>Cursos en YouTube</span></div>
           </div>
         </div>
       </section>
@@ -821,321 +757,55 @@
       <section class="section" id="sobre-mi">
         <div class="container section-head">
           <div>
-            <h3>Sobre mí</h3>
+            <h3>Perfil</h3>
             <p>
-              Un bloque corto y claro, sin sonar a currículum infinito. Aquí
-              vende tu valor como perfil interdisciplinario.
+              Un resumen breve para ubicar tu valor sin repetir el contenido del
+              CV.
             </p>
           </div>
         </div>
         <div class="container section-card two-col">
-          <div>
+          <div class="about-stack">
             <p class="about-text">
-              Soy muy analítico, metódico, perseverante y obsesionado con los
-              detalles. Me apasiona la enseñanza y conocer sobre diversos
-              contextos, culturas y lenguajes. Me caracterizo por ser utilitario
-              y un gran soporte para los demás. Al trabajar en equipos, nunca
-              busco protagonismos innecesarios.
+              Soy un perfil interdisciplinario orientado al desarrollo de
+              software, la docencia universitaria, la producción multimedia y la
+              simulación aplicada. Combino tecnología, diseño y ciencias de la
+              salud para construir proyectos con enfoque práctico y visual.
             </p>
-            <p class="about-text">
-              Disfruto sentirme útil y tener las situaciones bajo control; mi
-              prioridad es ayudar a otros a lograr sus objetivos. A lo largo de
-              mi trayectoria he impartido más de 40 asignaturas a nivel
-              licenciatura, entre las que destacan programación, algoritmos,
-              estructuras de datos, desarrollo web, administración de sistemas
-              operativos, redes, seguridad informática, diseño gráfico,
-              animación 2D/3D y producción multimedia.
-            </p>
+            <div class="callout">
+              Este espacio sirve como introducción humana y profesional: una
+              frase o dos que expliquen tu enfoque, tu estilo de trabajo y el
+              tipo de proyectos que te interesa desarrollar.
+            </div>
             <ul class="bullets">
               <li>
-                <i data-lucide="check-circle-2"></i> +15 años en educación
-                superior, desarrollo de software y experiencias interactivas.
+                <i data-lucide="check-circle-2"></i> Tecnología aplicada a
+                educación, videojuegos, simulación y comunicación visual.
               </li>
               <li>
-                <i data-lucide="check-circle-2"></i> Licenciado en Medicina,
-                Diseño Gráfico y Sistemas Computacionales.
+                <i data-lucide="check-circle-2"></i> Experiencia desarrollando
+                soluciones reales y materiales de apoyo para enseñanza.
               </li>
               <li>
-                <i data-lucide="check-circle-2"></i> Integración de tecnología,
-                creatividad y conocimiento médico en soluciones educativas.
-              </li>
-              <li>
-                <i data-lucide="check-circle-2"></i> +125 cursos impartidos en
-                plataformas como CITI Group, OPS e IMSS.
+                <i data-lucide="check-circle-2"></i> Interés por anatomía,
+                biomecánica y experiencias interactivas de aprendizaje.
               </li>
             </ul>
           </div>
           <div>
             <div class="tag-cloud" aria-label="Tecnologías destacadas">
-              <span class="tag">C#</span>
+              <span class="tag">.NET</span>
               <span class="tag">VB.NET</span>
+              <span class="tag">C#</span>
               <span class="tag">Java</span>
-              <span class="tag">C++</span>
               <span class="tag">PHP</span>
               <span class="tag">JavaScript</span>
-              <span class="tag">Kotlin</span>
-              <span class="tag">Python</span>
               <span class="tag">SQL Server</span>
               <span class="tag">MySQL</span>
               <span class="tag">Unity</span>
-              <span class="tag">Unreal Engine</span>
               <span class="tag">Blender</span>
-              <span class="tag">Maya</span>
-              <span class="tag">3DS Max</span>
-              <span class="tag">Photoshop</span>
-              <span class="tag">Figma</span>
-            </div>
-          </div>
-        </div>
-      </section>
-
-      <!-- Formación Académica -->
-      <section class="section" id="formacion">
-        <div class="container section-head">
-          <div>
-            <h3>Formación Académica</h3>
-            <p>
-              Tres licenciaturas que combinan tecnología, arte y ciencias de la
-              salud.
-            </p>
-          </div>
-        </div>
-        <div class="container section-card">
-          <div
-            style="
-              display: grid;
-              grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-              gap: 16px;
-            "
-          >
-            <div
-              style="
-                padding: 18px;
-                border-radius: 16px;
-                background: rgba(15, 39, 71, 0.04);
-                border: 1px solid rgba(15, 39, 71, 0.08);
-              "
-            >
-              <div
-                style="
-                  display: flex;
-                  align-items: center;
-                  gap: 10px;
-                  margin-bottom: 10px;
-                "
-              >
-                <span style="font-size: 1.6rem">⚕</span>
-                <strong style="color: var(--primary)"
-                  >Lic. Medicina General y Comunitaria</strong
-                >
-              </div>
-              <p style="margin: 0; color: var(--muted); font-size: 0.95rem">
-                Benemérita Universidad Autónoma de Puebla
-              </p>
-              <p
-                style="margin: 4px 0 0; color: var(--primary); font-weight: 700"
-              >
-                2016 – 2021
-              </p>
-            </div>
-            <div
-              style="
-                padding: 18px;
-                border-radius: 16px;
-                background: rgba(15, 39, 71, 0.04);
-                border: 1px solid rgba(15, 39, 71, 0.08);
-              "
-            >
-              <div
-                style="
-                  display: flex;
-                  align-items: center;
-                  gap: 10px;
-                  margin-bottom: 10px;
-                "
-              >
-                <span style="font-size: 1.6rem">🎨</span>
-                <strong style="color: var(--primary)"
-                  >Lic. Diseño Gráfico</strong
-                >
-              </div>
-              <p style="margin: 0; color: var(--muted); font-size: 0.95rem">
-                Universidad Hispana de Puebla
-              </p>
-              <p
-                style="margin: 4px 0 0; color: var(--primary); font-weight: 700"
-              >
-                2011 – 2014
-              </p>
-            </div>
-            <div
-              style="
-                padding: 18px;
-                border-radius: 16px;
-                background: rgba(15, 39, 71, 0.04);
-                border: 1px solid rgba(15, 39, 71, 0.08);
-              "
-            >
-              <div
-                style="
-                  display: flex;
-                  align-items: center;
-                  gap: 10px;
-                  margin-bottom: 10px;
-                "
-              >
-                <span style="font-size: 1.6rem">💻</span>
-                <strong style="color: var(--primary)"
-                  >Lic. Sistemas Computacionales</strong
-                >
-              </div>
-              <p style="margin: 0; color: var(--muted); font-size: 0.95rem">
-                Universidad Hispana de Puebla
-              </p>
-              <p
-                style="margin: 4px 0 0; color: var(--primary); font-weight: 700"
-              >
-                2006 – 2010
-              </p>
-            </div>
-          </div>
-        </div>
-      </section>
-
-      <!-- Experiencia Profesional -->
-      <section class="section" id="experiencia">
-        <div class="container section-head">
-          <div>
-            <h3>Experiencia Profesional</h3>
-            <p>
-              Trayectoria en docencia, desarrollo de software y atención médica.
-            </p>
-          </div>
-        </div>
-        <div class="container section-card two-col">
-          <div>
-            <h4
-              style="
-                margin: 0 0 12px;
-                color: var(--primary);
-                display: flex;
-                align-items: center;
-                gap: 8px;
-              "
-            >
-              <i data-lucide="school"></i> Docencia
-            </h4>
-            <ul class="bullets">
-              <li>
-                <i data-lucide="building-2"></i>
-                <div>
-                  <strong>Docente Universitario</strong> · Instituto
-                  Universitario Hispana · 2011 – Actualidad
-                </div>
-              </li>
-              <li>
-                <i data-lucide="building-2"></i>
-                <div>
-                  <strong>Docente</strong> · Bachillerato CECUEP / Inst. Henry
-                  Wallon · 2017 – 2018
-                </div>
-              </li>
-              <li>
-                <i data-lucide="building-2"></i>
-                <div>
-                  <strong>Instructor de inglés e informática</strong> · CETEC
-                  Teziutlán S.C. · 2010 – 2011
-                </div>
-              </li>
-            </ul>
-          </div>
-          <div>
-            <h4
-              style="
-                margin: 0 0 12px;
-                color: var(--primary);
-                display: flex;
-                align-items: center;
-                gap: 8px;
-              "
-            >
-              <i data-lucide="briefcase"></i> Puestos Relacionados
-            </h4>
-            <ul class="bullets">
-              <li>
-                <i data-lucide="code-xml"></i>
-                <div>
-                  <strong>Programador</strong> · Promotora de Cultura de
-                  Teziutlán S.C. · 2011 – Actualidad
-                </div>
-              </li>
-              <li>
-                <i data-lucide="code-xml"></i>
-                <div>
-                  <strong>Programador / Consultor</strong> · Promotora FCI Don
-                  Diario · 2009 – Actualidad
-                </div>
-              </li>
-              <li>
-                <i data-lucide="heart-pulse"></i>
-                <div>
-                  <strong>Médico</strong> · UMF 22 del IMSS Teziutlán · 2024 –
-                  2025
-                </div>
-              </li>
-            </ul>
-          </div>
-        </div>
-      </section>
-
-      <!-- Asignaturas impartidas -->
-      <section class="section" id="asignaturas">
-        <div class="container section-head">
-          <div>
-            <h3>Asignaturas impartidas</h3>
-            <p>
-              +40 materias a nivel licenciatura en áreas de tecnología, diseño y
-              salud.
-            </p>
-          </div>
-        </div>
-        <div class="container section-card">
-          <div class="two-col">
-            <div>
-              <h4 style="margin: 0 0 10px; color: var(--primary)">
-                <i data-lucide="code-xml"></i> Tecnología y Sistemas
-              </h4>
-              <div class="tag-cloud">
-                <span class="tag">Programación</span>
-                <span class="tag">Algoritmos</span>
-                <span class="tag">Estructuras de datos</span>
-                <span class="tag">POO</span>
-                <span class="tag">Lenguaje ensamblador</span>
-                <span class="tag">Análisis y diseño de sistemas</span>
-                <span class="tag">Desarrollo web</span>
-                <span class="tag">Sistemas operativos</span>
-                <span class="tag">Redes</span>
-                <span class="tag">Seguridad informática</span>
-                <span class="tag">Lenguajes formales</span>
-                <span class="tag">Arquitectura de computadoras</span>
-                <span class="tag">Estadística aplicada</span>
-              </div>
-            </div>
-            <div>
-              <h4 style="margin: 0 0 10px; color: var(--primary)">
-                <i data-lucide="palette"></i> Diseño y Multimedia
-              </h4>
-              <div class="tag-cloud">
-                <span class="tag">Creatividad publicitaria</span>
-                <span class="tag">Fotografía digital</span>
-                <span class="tag">Edición de audio y vídeo</span>
-                <span class="tag">Animación 2D/3D</span>
-                <span class="tag">Diseño web</span>
-                <span class="tag">Publicaciones digitales</span>
-                <span class="tag">Tecnología de la imagen</span>
-                <span class="tag">Teoría de la comunicación</span>
-                <span class="tag">Metodología de investigación</span>
-              </div>
+              <span class="tag">UX/UI</span>
+              <span class="tag">Moodle</span>
             </div>
           </div>
         </div>
@@ -1144,10 +814,10 @@
       <section class="section" id="portafolio">
         <div class="container section-head">
           <div>
-            <h3>Portafolio profesional</h3>
+            <h3>Portafolio organizado</h3>
             <p>
-              Proyectos organizados por categorías: video, diseño impreso,
-              desarrollo web, videojuegos, modelado 3D y galería visual.
+              Las piezas están agrupadas por tipo para que la navegación sea
+              inmediata.
             </p>
           </div>
         </div>
@@ -1171,82 +841,24 @@
             <article class="section-card card wide tall" data-category="video">
               <div class="thumb">
                 <span class="type"
-                  ><i data-lucide="clapperboard"></i> Demo Reel</span
+                  ><i data-lucide="clapperboard"></i> Demo reel</span
                 >
                 <span class="count">1 pieza</span>
               </div>
               <div class="card-body">
-                <h4>Demo reel profesional</h4>
+                <h4>Video de presentación</h4>
                 <p>
-                  Compilación de los mejores trabajos en desarrollo de software,
-                  diseño gráfico, videojuegos y experiencias interactivas.
-                  Campañas y proyectos audiovisuales para Universidad Hispana.
+                  Tu mejor material en una sola pieza audiovisual para abrir el
+                  portafolio con fuerza.
                 </p>
                 <div class="mini">
-                  <span>Video</span><span>Reel</span
-                  ><span>Universidad Hispana</span>
+                  <span>Video</span><span>Reel</span><span>Presentación</span>
                 </div>
                 <div class="card-actions">
-                  <a
-                    class="primary"
-                    href="https://youtu.be/OiSBsxiZruM"
-                    target="_blank"
-                    rel="noopener"
-                    >▶ Ver demo reel</a
+                  <a class="primary" href="#" target="_blank" rel="noopener"
+                    >Ver video</a
                   >
-                </div>
-              </div>
-            </article>
-
-            <article class="section-card card wide" data-category="web">
-              <div class="thumb">
-                <span class="type"><i data-lucide="box"></i> 3DS Max</span>
-                <span class="count">Playlist</span>
-              </div>
-              <div class="card-body">
-                <h4>Curso de modelado 3D con 3DS Max</h4>
-                <p>
-                  Curso básico de modelado en 3DS Max 2016 para quienes inician
-                  en el mundo del 3D. Cubre fundamentos de modelado, materiales
-                  y render.
-                </p>
-                <div class="mini">
-                  <span>3DS Max</span><span>YouTube</span><span>Educación</span>
-                </div>
-                <div class="card-actions">
-                  <a
-                    class="primary"
-                    href="https://www.youtube.com/playlist?list=PLRC_0APJuLLM"
-                    target="_blank"
-                    rel="noopener"
-                    >▶ Ver playlist</a
-                  >
-                </div>
-              </div>
-            </article>
-
-            <article class="section-card card" data-category="web">
-              <div class="thumb">
-                <span class="type"><i data-lucide="server"></i> Software</span>
-                <span class="count">1 proyecto</span>
-              </div>
-              <div class="card-body">
-                <h4>Plataforma institucional PUI</h4>
-                <p>
-                  Plataforma de software desarrollada en C#, con API en PHP y
-                  base de datos MySQL para gestión institucional.
-                </p>
-                <div class="mini">
-                  <span>C#</span><span>PHP</span><span>MySQL</span>
-                </div>
-                <div class="card-actions">
-                  <a
-                    class="primary"
-                    href="https://youtu.be/J9qIf-upKkk"
-                    target="_blank"
-                    rel="noopener"
-                    >▶ Ver video</a
-                  >
+                  <a href="#">Ficha</a>
                 </div>
               </div>
             </article>
@@ -1261,9 +873,8 @@
               <div class="card-body">
                 <h4>Cartel principal</h4>
                 <p>
-                  Diseño de cartel con enfoque en comunicación visual, jerarquía
-                  tipográfica y composición impactante para eventos académicos o
-                  institucionales.
+                  Una pieza fuerte y visual que represente tu capacidad de
+                  composición y jerarquía gráfica.
                 </p>
                 <div class="mini"><span>Diseño</span><span>Impreso</span></div>
                 <div class="card-actions">
@@ -1282,9 +893,8 @@
               <div class="card-body">
                 <h4>Tríptico informativo</h4>
                 <p>
-                  Material editorial que demuestra capacidad de síntesis,
-                  jerarquía visual y composición para comunicación
-                  institucional.
+                  Ideal para mostrar síntesis editorial, orden de contenido y
+                  lectura clara.
                 </p>
                 <div class="mini">
                   <span>Editorial</span><span>Comunicación</span>
@@ -1303,8 +913,8 @@
               <div class="card-body">
                 <h4>Serie de posters</h4>
                 <p>
-                  Colección de posters con consistencia estilística, aplicando
-                  principios de diseño gráfico y comunicación visual.
+                  Dos piezas que puedes presentar como una serie con intención
+                  visual común.
                 </p>
                 <div class="mini"><span>Serie</span><span>Identidad</span></div>
                 <div class="card-actions">
@@ -1319,13 +929,13 @@
                 <span class="count">1 ejecutable</span>
               </div>
               <div class="card-body">
-                <h4>Proyecto interactivo Flash</h4>
+                <h4>Proyecto interactivo legacy</h4>
                 <p>
-                  Proyecto multimedia interactivo desarrollado en Flash/Animate,
-                  como material didáctico y demostración de animación 2D.
+                  Si lo conservas, preséntalo como parte de tu evolución técnica
+                  y multimedia.
                 </p>
                 <div class="mini">
-                  <span>Animate</span><span>Interactivo</span><span>2D</span>
+                  <span>Legacy</span><span>Interactivo</span>
                 </div>
                 <div class="card-actions">
                   <a class="primary" href="#">Detalles</a
@@ -1342,10 +952,10 @@
               <div class="card-body">
                 <h4>Galería fotográfica</h4>
                 <p>
-                  Colección de fotografías y capturas de proyectos, organizadas
-                  por tema: diseño, anatomía, desarrollo y eventos académicos.
+                  La portada de tus fotos irá aquí cuando termines de
+                  optimizarlas.
                 </p>
-                <div class="mini"><span>Fotos</span><span>Proyectos</span></div>
+                <div class="mini"><span>Fotos</span><span>Álbum</span></div>
                 <div class="card-actions">
                   <a class="primary" href="#multimedia">Ver galería</a
                   ><a href="#">Organizar</a>
@@ -1358,23 +968,22 @@
                 <span class="type"
                   ><i data-lucide="graduation-cap"></i> Cursos</span
                 >
-                <span class="count">+125 cursos</span>
+                <span class="count">3 videos</span>
               </div>
               <div class="card-body">
-                <h4>Cursos y capacitación</h4>
+                <h4>Cursos en YouTube</h4>
                 <p>
-                  +125 cursos impartidos en plataformas como CITI Group, OPS e
-                  IMSS sobre tecnología, salud, psicología y prevención de
-                  adiciones. Pláticas en CFE, TELMEX y Tecnológico Superior de
-                  Tlatlauquitepec.
+                  En esta tarjeta puedes enlazar tus tres cursos y resumir el
+                  tema de cada uno.
                 </p>
                 <div class="mini">
-                  <span>Educación</span><span>Salud</span
-                  ><span>Tecnología</span>
+                  <span>YouTube</span><span>Educación</span
+                  ><span>Capacitación</span>
                 </div>
                 <div class="card-actions">
-                  <a class="primary" href="#">Ver cursos</a>
-                  <a href="#">Temario</a>
+                  <a class="primary" href="#">Curso 1</a>
+                  <a href="#">Curso 2</a>
+                  <a href="#">Curso 3</a>
                 </div>
               </div>
             </article>
@@ -1385,18 +994,15 @@
                 <span class="count">1 proyecto</span>
               </div>
               <div class="card-body">
-                <h4>Videojuego interactivo</h4>
+                <h4>Videojuego</h4>
                 <p>
-                  Proyecto de videojuego desarrollado con Unity, integrando
-                  modelado 3D, diseño de niveles y experiencias interactivas
-                  educativas.
+                  Tu pieza más importante si la vacante va por desarrollo
+                  interactivo o videojuegos.
                 </p>
-                <div class="mini">
-                  <span>Unity</span><span>3D</span><span>Educativo</span>
-                </div>
+                <div class="mini"><span>Unity</span><span>Gameplay</span></div>
                 <div class="card-actions">
                   <a class="primary" href="#">Ver juego</a
-                  ><a href="#">Tráiler</a>
+                  ><a href="#">Trailer</a>
                 </div>
               </div>
             </article>
@@ -1407,24 +1013,17 @@
                 <span class="count">Modelos</span>
               </div>
               <div class="card-body">
-                <h4>Modelado 3D y anatomía</h4>
+                <h4>Modelos 3D</h4>
                 <p>
-                  Modelos 3D creados en Blender, Maya y 3DS Max, incluyendo
-                  piezas anatómicas, props y escenas para simulación y
-                  educación. Curso completo en YouTube.
+                  Personajes, props, anatomía o renders sueltos, presentados
+                  como una mini colección.
                 </p>
                 <div class="mini">
-                  <span>Blender</span><span>Maya</span><span>3DS Max</span>
+                  <span>Blender</span><span>Maya</span><span>3ds Max</span>
                 </div>
                 <div class="card-actions">
-                  <a
-                    class="primary"
-                    href="https://www.youtube.com/playlist?list=PLRC_0APJuLLM"
-                    target="_blank"
-                    rel="noopener"
-                    >▶ Curso 3D</a
-                  >
-                  <a href="#multimedia">Galería</a>
+                  <a class="primary" href="#multimedia">Ver modelos</a
+                  ><a href="#">Detalles</a>
                 </div>
               </div>
             </article>
@@ -1437,8 +1036,8 @@
           <div>
             <h3>Galería visual</h3>
             <p>
-              Capturas de proyectos, renders 3D, diseño gráfico y material
-              multimedia organizado por categorías.
+              Un espacio reservado para piezas destacadas, miniaturas y material
+              de apoyo.
             </p>
           </div>
         </div>
@@ -1446,30 +1045,28 @@
           <div class="gallery-grid">
             <div class="shot large">
               <div class="shot-icon"><i data-lucide="camera"></i></div>
-              <div class="shot-label">
-                Proyecto destacado / renders 3D / captura de diseño
-              </div>
+              <div class="shot-label">Foto destacada / portada de galería</div>
             </div>
             <div class="shot">
               <div class="shot-icon"><i data-lucide="image"></i></div>
-              <div class="shot-label">Modelo 3D anatómico</div>
+              <div class="shot-label">Ilustración 1</div>
             </div>
             <div class="shot">
               <div class="shot-icon"><i data-lucide="image"></i></div>
-              <div class="shot-label">Diseño gráfico</div>
+              <div class="shot-label">Ilustración 2</div>
             </div>
             <div class="shot">
               <div class="shot-icon"><i data-lucide="image"></i></div>
-              <div class="shot-label">Captura de videojuego</div>
+              <div class="shot-label">Ilustración 3</div>
             </div>
             <div class="shot">
               <div class="shot-icon"><i data-lucide="image"></i></div>
-              <div class="shot-label">Material didáctico</div>
+              <div class="shot-label">Ilustración 4</div>
             </div>
             <div class="shot large">
               <div class="shot-icon"><i data-lucide="play-circle"></i></div>
               <div class="shot-label">
-                Demo reel o captura del proyecto interactivo
+                Miniatura del demo reel o captura del juego
               </div>
             </div>
           </div>
@@ -1481,25 +1078,24 @@
           <div>
             <h3>Contacto</h3>
             <p>
-              ¿Tienes un proyecto en mente? ¡Hablemos! Disponible para
-              colaboraciones, docencia y desarrollo de software.
+              Agrega aquí correo, GitHub, LinkedIn y el enlace principal que
+              quieras poner en el QR.
             </p>
           </div>
         </div>
         <div class="container section-card two-col">
           <div>
             <div class="about-text">
-              Docente universitario, programador y diseñador gráfico con +15
-              años de experiencia. Disponible para proyectos de desarrollo de
-              software, diseño educativo, capacitación y simulación interactiva.
+              Usa esta parte para cerrar con una invitación clara a ver tu
+              trabajo, descargar el CV o revisar tus proyectos.
             </div>
             <div class="hero-actions" style="margin-top: 16px">
-              <a class="btn btn-primary" href="mailto:drroberthub@gmail.com">
+              <a class="btn btn-primary" href="mailto:tu-correo@ejemplo.com">
                 <i data-lucide="mail"></i> Correo
               </a>
               <a
                 class="btn btn-secondary"
-                href="https://github.com/DrRobertHub"
+                href="https://github.com/"
                 target="_blank"
                 rel="noopener"
               >
@@ -1507,35 +1103,32 @@
               </a>
               <a
                 class="btn btn-secondary"
-                href="https://drroberthub.github.io/"
+                href="https://www.linkedin.com/"
                 target="_blank"
                 rel="noopener"
               >
-                <i data-lucide="globe"></i> Portafolio
+                <i data-lucide="briefcase-business"></i> LinkedIn
               </a>
             </div>
           </div>
           <div>
             <div class="profile-card" style="text-align: left">
-              <h3 style="text-align: left; margin: 0">
-                Información de contacto
-              </h3>
+              <h3 style="text-align: left; margin: 0">Orden sugerido</h3>
               <p style="text-align: left">
-                Descarga mi CV o visita mi portafolio para conocer más sobre mis
-                proyectos y experiencia profesional.
+                CV · Video reel · Videojuego · 3D · Multimedia · Contacto.
               </p>
               <ul class="bullets">
                 <li>
-                  <i data-lucide="download"></i> Descarga mi
-                  <strong>CV completo</strong> en formato PDF.
+                  <i data-lucide="folder-open"></i> Usa nombres claros en tus
+                  archivos y carpetas.
                 </li>
                 <li>
-                  <i data-lucide="globe"></i> Portafolio en línea:
-                  <strong>drroberthub.github.io</strong>
+                  <i data-lucide="file-text"></i> Cada botón puede abrir un PDF,
+                  video, repo o carpeta.
                 </li>
                 <li>
-                  <i data-lucide="qr-code"></i> Escanea el QR del CV para
-                  acceder directamente a esta landing.
+                  <i data-lucide="qr-code"></i> El QR del CV puede apuntar a
+                  esta landing sin cambiarla cada vez.
                 </li>
               </ul>
             </div>
@@ -1546,7 +1139,10 @@
 
     <footer>
       <div class="container footer-card">
-        <div>Roberto Calderón Amorós · Algunos derechos reservados · 2026</div>
+        <div>
+          <strong>Portafolio profesional</strong> · Landing para GitHub Pages
+        </div>
+        <div>Diseñado para ordenar tu material sin duplicar el CV.</div>
       </div>
     </footer>
 
@@ -1560,7 +1156,6 @@
         btn.addEventListener("click", () => {
           filterButtons.forEach((b) => b.classList.remove("active"));
           btn.classList.add("active");
-
           const filter = btn.dataset.filter;
           cards.forEach((card) => {
             const category = card.dataset.category;
