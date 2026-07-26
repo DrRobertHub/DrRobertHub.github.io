@@ -188,8 +188,39 @@ h1, h2, h3, h4 { font-family: "Space Grotesk", Inter, sans-serif; }
 .card-body { padding: 18px; display: grid; gap: 12px; flex: 1; }
 .card-body h4 { margin: 0; font-size: 1.16rem; color: var(--primary); letter-spacing: -.01em; font-weight: 600; }
 .card-body p { margin: 0; color: var(--muted); line-height: 1.65; font-size: .95rem; }
-.mini { display: flex; flex-wrap: wrap; gap: 8px; }
-.mini span { padding: 8px 10px; border-radius: 999px; background: rgba(15,39,71,.06); border: 1px solid rgba(15,39,71,.08); color: var(--primary); font-weight: 700; font-size: .82rem; }
+/* ---------- Chips / Tags ---------- */
+.ctc-edge { display: flex; flex-wrap: wrap; gap: 8px; }
+.ctc-edge-chip {
+  position: relative;
+  display: inline-flex;
+  align-items: center;
+  padding: 8px 14px;
+  background: rgba(15,39,71,.05);
+  color: var(--primary);
+  border: 1px solid rgba(15,39,71,.10);
+  border-radius: 6px;
+  font: 600 12px/1 system-ui, sans-serif;
+  text-decoration: none;
+  overflow: hidden;
+  transition: background .2s, color .2s;
+}
+.ctc-edge-chip::after {
+  content: "";
+  position: absolute;
+  bottom: 0; left: 0; right: 0;
+  height: 2px;
+  background: linear-gradient(90deg, var(--primary-2), var(--accent));
+  transform: scaleX(0.4);
+  transform-origin: left center;
+  transition: transform .3s ease;
+}
+.ctc-edge-chip:hover {
+  background: rgba(15,39,71,.10);
+  color: var(--primary-2);
+}
+.ctc-edge-chip:hover::after {
+  transform: scaleX(1);
+}
 .card-actions { display: flex; gap: 10px; flex-wrap: wrap; margin-top: auto; }
 .card-actions a { display: inline-flex; align-items: center; gap: 8px; padding: 11px 13px; border-radius: 14px; font-weight: 700; font-size: .9rem; border: 1px solid rgba(15,39,71,.12); background: white; color: var(--primary); }
 .card-actions a.primary { background: var(--primary); color: white; border-color: transparent; }
