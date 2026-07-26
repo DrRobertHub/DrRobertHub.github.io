@@ -1,974 +1,1228 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="es-MX">
-<head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Roberto Calderón Amorós | Portafolio Profesional</title>
-  <meta name="description" content="Portafolio profesional, docente y creativo: software, videojuegos, diseño, anatomía, biomecánica y proyectos multimedia." />
-  <meta name="theme-color" content="#0f2747" />
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Roberto Calderón Amorós | Portafolio Profesional</title>
+    <meta
+      name="description"
+      content="Portafolio profesional, docente y creativo: software, videojuegos, diseño, anatomía, biomecánica y proyectos multimedia."
+    />
+    <meta name="theme-color" content="#0f2747" />
 
-  <!-- Fonts -->
-  <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+    <!-- Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap"
+      rel="stylesheet"
+    />
 
-  <!-- Icons -->
-  <script src="https://unpkg.com/lucide@latest"></script>
+    <!-- Icons -->
+    <script src="https://unpkg.com/lucide@latest"></script>
 
-  <style>
-    :root {
-      --bg: #eef3f9;
-      --surface: rgba(255,255,255,.72);
-      --surface-solid: #ffffff;
-      --surface-2: #f7f9fd;
-      --text: #0c1a2a;
-      --muted: #5b6b7f;
-      --primary: #0f2747;
-      --primary-2: #184a8d;
-      --accent: #4c87ff;
-      --accent-2: #9bc5ff;
-      --border: rgba(15,39,71,.12);
-      --shadow: 0 14px 40px rgba(11, 28, 55, .10);
-      --shadow-soft: 0 10px 28px rgba(11, 28, 55, .08);
-      --radius: 24px;
-      --radius-sm: 18px;
-      --max: 1200px;
-    }
-
-    * { box-sizing: border-box; }
-    html { scroll-behavior: smooth; }
-    body {
-      margin: 0;
-      font-family: Inter, system-ui, -apple-system, Segoe UI, Roboto, sans-serif;
-      color: var(--text);
-      background:
-        radial-gradient(circle at 15% 15%, rgba(76,135,255,.14), transparent 30%),
-        radial-gradient(circle at 85% 0%, rgba(24,74,141,.16), transparent 26%),
-        linear-gradient(180deg, #f6f9fe 0%, #edf3fb 100%);
-      min-height: 100vh;
-    }
-
-    a { color: inherit; text-decoration: none; }
-    img { max-width: 100%; display: block; }
-    .container {
-      width: min(var(--max), calc(100% - 32px));
-      margin: 0 auto;
-    }
-
-    /* Top bar */
-    .topbar {
-      position: sticky;
-      top: 0;
-      z-index: 40;
-      backdrop-filter: blur(18px);
-      background: rgba(238,243,249,.72);
-      border-bottom: 1px solid rgba(15,39,71,.08);
-    }
-    .topbar-inner {
-      display: flex;
-      align-items: center;
-      justify-content: space-between;
-      gap: 16px;
-      padding: 14px 0;
-    }
-    .brand {
-      display: flex;
-      align-items: center;
-      gap: 12px;
-      min-width: 0;
-    }
-    .brand-badge {
-      width: 42px;
-      height: 42px;
-      border-radius: 14px;
-      background: linear-gradient(145deg, var(--primary), var(--primary-2));
-      box-shadow: inset 0 1px 0 rgba(255,255,255,.16), var(--shadow-soft);
-      display: grid;
-      place-items: center;
-      color: white;
-      flex: 0 0 auto;
-    }
-    .brand h1 {
-      font-size: 1rem;
-      margin: 0;
-      line-height: 1.2;
-      font-weight: 800;
-      white-space: nowrap;
-      overflow: hidden;
-      text-overflow: ellipsis;
-    }
-    .brand p {
-      margin: 3px 0 0;
-      color: var(--muted);
-      font-size: .88rem;
-      white-space: nowrap;
-      overflow: hidden;
-      text-overflow: ellipsis;
-    }
-    .nav {
-      display: flex;
-      flex-wrap: wrap;
-      justify-content: flex-end;
-      gap: 8px;
-    }
-    .nav a {
-      font-size: .92rem;
-      font-weight: 600;
-      color: var(--primary);
-      padding: 10px 14px;
-      border-radius: 999px;
-      background: rgba(255,255,255,.65);
-      border: 1px solid rgba(15,39,71,.08);
-      transition: transform .18s ease, background .18s ease, box-shadow .18s ease;
-    }
-    .nav a:hover { transform: translateY(-1px); box-shadow: var(--shadow-soft); background: white; }
-
-    /* Hero */
-    .hero {
-      padding: 28px 0 18px;
-    }
-    .hero-card {
-      border: 1px solid var(--border);
-      background: linear-gradient(180deg, rgba(255,255,255,.82), rgba(255,255,255,.58));
-      backdrop-filter: blur(18px);
-      border-radius: 32px;
-      box-shadow: var(--shadow);
-      overflow: hidden;
-      position: relative;
-    }
-    .hero-card::before {
-      content: "";
-      position: absolute;
-      inset: 0;
-      background: linear-gradient(130deg, rgba(15,39,71,.05), transparent 42%, rgba(76,135,255,.08));
-      pointer-events: none;
-    }
-    .hero-grid {
-      position: relative;
-      display: grid;
-      grid-template-columns: 1.3fr .9fr;
-      gap: 22px;
-      padding: 28px;
-      align-items: center;
-    }
-    .eyebrow {
-      display: inline-flex;
-      align-items: center;
-      gap: 8px;
-      padding: 8px 12px;
-      background: rgba(15,39,71,.06);
-      color: var(--primary);
-      border: 1px solid rgba(15,39,71,.10);
-      border-radius: 999px;
-      font-size: .84rem;
-      font-weight: 700;
-      margin-bottom: 14px;
-    }
-    .hero h2 {
-      margin: 0;
-      font-size: clamp(2rem, 4vw, 4rem);
-      line-height: 1.02;
-      letter-spacing: -.03em;
-      color: var(--primary);
-    }
-    .hero .subtitle {
-      margin: 14px 0 0;
-      font-size: 1.06rem;
-      line-height: 1.7;
-      color: var(--muted);
-      max-width: 62ch;
-    }
-    .pill-row {
-      display: flex;
-      flex-wrap: wrap;
-      gap: 10px;
-      margin-top: 18px;
-    }
-    .pill {
-      padding: 10px 14px;
-      background: rgba(255,255,255,.72);
-      border: 1px solid rgba(15,39,71,.10);
-      border-radius: 999px;
-      font-weight: 600;
-      font-size: .92rem;
-      color: var(--primary);
-      box-shadow: 0 8px 20px rgba(11, 28, 55, .05);
-    }
-    .hero-actions {
-      display: flex;
-      flex-wrap: wrap;
-      gap: 12px;
-      margin-top: 20px;
-    }
-    .btn {
-      display: inline-flex;
-      align-items: center;
-      justify-content: center;
-      gap: 10px;
-      border: 0;
-      border-radius: 16px;
-      padding: 14px 18px;
-      font-weight: 700;
-      cursor: pointer;
-      transition: transform .18s ease, box-shadow .18s ease, opacity .18s ease;
-      box-shadow: var(--shadow-soft);
-      user-select: none;
-    }
-    .btn:hover { transform: translateY(-1px); }
-    .btn-primary {
-      background: linear-gradient(145deg, var(--primary), var(--primary-2));
-      color: white;
-    }
-    .btn-secondary {
-      background: white;
-      color: var(--primary);
-      border: 1px solid rgba(15,39,71,.12);
-    }
-    .hero-side {
-      display: grid;
-      gap: 14px;
-    }
-    .profile-card,
-    .metric-card,
-    .info-card,
-    .section-card {
-      background: rgba(255,255,255,.82);
-      backdrop-filter: blur(18px);
-      border: 1px solid rgba(15,39,71,.10);
-      border-radius: var(--radius);
-      box-shadow: var(--shadow-soft);
-    }
-    .profile-card {
-      padding: 18px;
-      display: grid;
-      gap: 14px;
-      text-align: center;
-    }
-    .avatar {
-      width: 122px;
-      height: 122px;
-      border-radius: 28px;
-      margin: 0 auto;
-      background: linear-gradient(160deg, #173c70, #5b8fe5);
-      box-shadow: inset 0 1px 0 rgba(255,255,255,.18), var(--shadow);
-      display: grid;
-      place-items: center;
-      color: white;
-      font-size: 2.8rem;
-      font-weight: 800;
-    }
-    .profile-card h3 { margin: 0; font-size: 1.16rem; color: var(--primary); }
-    .profile-card p { margin: 0; color: var(--muted); line-height: 1.65; font-size: .96rem; }
-    .profile-meta {
-      display: flex;
-      flex-wrap: wrap;
-      justify-content: center;
-      gap: 8px;
-    }
-    .profile-meta span {
-      padding: 8px 12px;
-      border-radius: 999px;
-      background: rgba(15,39,71,.06);
-      color: var(--primary);
-      font-weight: 700;
-      font-size: .83rem;
-    }
-
-    /* Stats */
-    .stats {
-      padding: 10px 0 4px;
-    }
-    .stats-grid {
-      display: grid;
-      grid-template-columns: repeat(4, 1fr);
-      gap: 14px;
-    }
-    .metric-card {
-      padding: 18px;
-      display: flex;
-      align-items: center;
-      gap: 14px;
-    }
-    .metric-icon {
-      width: 46px;
-      height: 46px;
-      border-radius: 16px;
-      background: rgba(15,39,71,.08);
-      color: var(--primary);
-      display: grid;
-      place-items: center;
-      flex: 0 0 auto;
-    }
-    .metric-card strong {
-      display: block;
-      font-size: 1.35rem;
-      line-height: 1;
-      color: var(--primary);
-    }
-    .metric-card span {
-      display: block;
-      margin-top: 4px;
-      color: var(--muted);
-      font-size: .92rem;
-      line-height: 1.35;
-    }
-
-    /* Sections */
-    .section {
-      padding: 18px 0;
-    }
-    .section-head {
-      display: flex;
-      justify-content: space-between;
-      align-items: end;
-      gap: 16px;
-      margin-bottom: 14px;
-    }
-    .section-head h3 {
-      margin: 0;
-      font-size: 1.55rem;
-      color: var(--primary);
-      letter-spacing: -.02em;
-    }
-    .section-head p {
-      margin: 0;
-      color: var(--muted);
-      max-width: 70ch;
-      line-height: 1.6;
-    }
-
-    .section-card { padding: 22px; }
-
-    .two-col {
-      display: grid;
-      grid-template-columns: 1.1fr .9fr;
-      gap: 18px;
-    }
-    .about-text {
-      color: var(--muted);
-      line-height: 1.8;
-      font-size: 1rem;
-    }
-    .bullets {
-      display: grid;
-      gap: 10px;
-      margin: 16px 0 0;
-      padding: 0;
-      list-style: none;
-    }
-    .bullets li {
-      display: flex;
-      gap: 10px;
-      align-items: flex-start;
-      background: rgba(15,39,71,.04);
-      border: 1px solid rgba(15,39,71,.08);
-      border-radius: 16px;
-      padding: 12px 14px;
-      color: var(--primary);
-      line-height: 1.5;
-    }
-    .bullets i { margin-top: 3px; color: var(--primary-2); }
-
-    .tag-cloud {
-      display: flex;
-      flex-wrap: wrap;
-      gap: 10px;
-    }
-    .tag {
-      padding: 10px 12px;
-      border-radius: 999px;
-      background: rgba(255,255,255,.88);
-      border: 1px solid rgba(15,39,71,.10);
-      color: var(--primary);
-      font-weight: 700;
-      font-size: .88rem;
-    }
-
-    /* Filters */
-    .filters {
-      display: flex;
-      flex-wrap: wrap;
-      gap: 10px;
-      margin: 14px 0 18px;
-    }
-    .filter-btn {
-      border: 1px solid rgba(15,39,71,.12);
-      background: rgba(255,255,255,.82);
-      color: var(--primary);
-      padding: 11px 14px;
-      border-radius: 999px;
-      font-weight: 700;
-      cursor: pointer;
-      transition: .18s ease;
-    }
-    .filter-btn:hover { transform: translateY(-1px); box-shadow: var(--shadow-soft); }
-    .filter-btn.active {
-      background: linear-gradient(145deg, var(--primary), var(--primary-2));
-      color: white;
-      border-color: transparent;
-    }
-
-    /* Portfolio cards */
-    .portfolio-grid {
-      display: grid;
-      grid-template-columns: repeat(12, 1fr);
-      gap: 14px;
-    }
-    .card {
-      grid-column: span 4;
-      overflow: hidden;
-      position: relative;
-      min-height: 280px;
-    }
-    .card.wide { grid-column: span 8; }
-    .card.tall { min-height: 342px; }
-    .card .thumb {
-      height: 160px;
-      background:
-        linear-gradient(135deg, rgba(15,39,71,.92), rgba(76,135,255,.75)),
-        radial-gradient(circle at top right, rgba(255,255,255,.28), transparent 35%);
-      display: flex;
-      align-items: flex-end;
-      justify-content: space-between;
-      padding: 18px;
-      color: white;
-      position: relative;
-    }
-    .thumb .type {
-      display: inline-flex;
-      align-items: center;
-      gap: 8px;
-      background: rgba(255,255,255,.12);
-      border: 1px solid rgba(255,255,255,.15);
-      border-radius: 999px;
-      padding: 8px 11px;
-      font-size: .82rem;
-      font-weight: 800;
-    }
-    .thumb .count {
-      font-size: .82rem;
-      background: rgba(255,255,255,.12);
-      border: 1px solid rgba(255,255,255,.15);
-      border-radius: 999px;
-      padding: 8px 11px;
-      font-weight: 700;
-    }
-    .card-body {
-      padding: 18px;
-      display: grid;
-      gap: 12px;
-    }
-    .card-body h4 {
-      margin: 0;
-      font-size: 1.18rem;
-      color: var(--primary);
-      letter-spacing: -.02em;
-    }
-    .card-body p {
-      margin: 0;
-      color: var(--muted);
-      line-height: 1.65;
-      font-size: .95rem;
-    }
-    .mini {
-      display: flex;
-      flex-wrap: wrap;
-      gap: 8px;
-    }
-    .mini span {
-      padding: 8px 10px;
-      border-radius: 999px;
-      background: rgba(15,39,71,.06);
-      border: 1px solid rgba(15,39,71,.08);
-      color: var(--primary);
-      font-weight: 700;
-      font-size: .82rem;
-    }
-    .card-actions {
-      display: flex;
-      gap: 10px;
-      flex-wrap: wrap;
-      margin-top: auto;
-    }
-    .card-actions a {
-      display: inline-flex;
-      align-items: center;
-      gap: 8px;
-      padding: 11px 13px;
-      border-radius: 14px;
-      font-weight: 700;
-      font-size: .9rem;
-      border: 1px solid rgba(15,39,71,.12);
-      background: white;
-      color: var(--primary);
-    }
-    .card-actions a.primary {
-      background: var(--primary);
-      color: white;
-      border-color: transparent;
-    }
-    .hidden { display: none !important; }
-
-    /* Gallery */
-    .gallery-grid {
-      display: grid;
-      grid-template-columns: repeat(12, 1fr);
-      gap: 12px;
-    }
-    .shot {
-      grid-column: span 3;
-      border-radius: 22px;
-      overflow: hidden;
-      min-height: 170px;
-      background: linear-gradient(135deg, #1a3b69, #6a97df);
-      color: white;
-      position: relative;
-      box-shadow: var(--shadow-soft);
-      border: 1px solid rgba(255,255,255,.12);
-    }
-    .shot.large { grid-column: span 6; min-height: 240px; }
-    .shot .shot-label {
-      position: absolute;
-      left: 14px;
-      right: 14px;
-      bottom: 14px;
-      padding: 12px 14px;
-      background: rgba(255,255,255,.12);
-      backdrop-filter: blur(10px);
-      border: 1px solid rgba(255,255,255,.14);
-      border-radius: 18px;
-      font-weight: 700;
-      line-height: 1.4;
-    }
-    .shot .shot-icon {
-      position: absolute;
-      top: 14px;
-      right: 14px;
-      width: 42px;
-      height: 42px;
-      border-radius: 14px;
-      background: rgba(255,255,255,.14);
-      display: grid;
-      place-items: center;
-      border: 1px solid rgba(255,255,255,.16);
-    }
-
-    /* Footer */
-    footer {
-      padding: 24px 0 36px;
-      color: var(--muted);
-    }
-    .footer-card {
-      padding: 18px 22px;
-      border-radius: 24px;
-      background: rgba(255,255,255,.72);
-      border: 1px solid rgba(15,39,71,.10);
-      box-shadow: var(--shadow-soft);
-      display: flex;
-      flex-wrap: wrap;
-      align-items: center;
-      justify-content: space-between;
-      gap: 12px;
-    }
-    .footer-card strong { color: var(--primary); }
-
-    /* Responsive */
-    @media (max-width: 1024px) {
-      .hero-grid,
-      .two-col {
-        grid-template-columns: 1fr;
+    <style>
+      :root {
+        --bg: #eef3f9;
+        --surface: rgba(255, 255, 255, 0.72);
+        --surface-solid: #ffffff;
+        --surface-2: #f7f9fd;
+        --text: #0c1a2a;
+        --muted: #5b6b7f;
+        --primary: #0f2747;
+        --primary-2: #184a8d;
+        --accent: #4c87ff;
+        --accent-2: #9bc5ff;
+        --border: rgba(15, 39, 71, 0.12);
+        --shadow: 0 14px 40px rgba(11, 28, 55, 0.1);
+        --shadow-soft: 0 10px 28px rgba(11, 28, 55, 0.08);
+        --radius: 24px;
+        --radius-sm: 18px;
+        --max: 1200px;
       }
-      .stats-grid { grid-template-columns: repeat(2, 1fr); }
-      .card { grid-column: span 6; }
-      .card.wide { grid-column: span 12; }
-      .shot { grid-column: span 6; }
-    }
-    @media (max-width: 720px) {
-      .topbar-inner { flex-direction: column; align-items: flex-start; }
-      .nav { justify-content: flex-start; }
-      .hero-grid { padding: 20px; }
-      .section-card { padding: 18px; }
-      .stats-grid { grid-template-columns: 1fr; }
-      .card { grid-column: span 12; }
-      .shot { grid-column: span 12; min-height: 190px; }
-      .shot.large { grid-column: span 12; }
-      .section-head { align-items: flex-start; flex-direction: column; }
-    }
-  </style>
-</head>
-<body>
-  <header class="topbar">
-    <div class="container topbar-inner">
-      <div class="brand">
-        <div class="brand-badge"><i data-lucide="sparkles" aria-hidden="true"></i></div>
-        <div>
-          <h1>Roberto Calderón Amorós</h1>
-          <p>Software · Educación · Simulación · Diseño</p>
-        </div>
-      </div>
-      <nav class="nav" aria-label="Navegación principal">
-        <a href="#sobre-mi">Sobre mí</a>
-        <a href="#portafolio">Portafolio</a>
-        <a href="#multimedia">Multimedia</a>
-        <a href="#contacto">Contacto</a>
-      </nav>
-    </div>
-  </header>
 
-  <main>
-    <section class="hero">
-      <div class="container hero-card">
-        <div class="hero-grid">
+      * {
+        box-sizing: border-box;
+      }
+      html {
+        scroll-behavior: smooth;
+      }
+      body {
+        margin: 0;
+        font-family:
+          Inter,
+          system-ui,
+          -apple-system,
+          Segoe UI,
+          Roboto,
+          sans-serif;
+        color: var(--text);
+        background:
+          radial-gradient(
+            circle at 15% 15%,
+            rgba(76, 135, 255, 0.14),
+            transparent 30%
+          ),
+          radial-gradient(
+            circle at 85% 0%,
+            rgba(24, 74, 141, 0.16),
+            transparent 26%
+          ),
+          linear-gradient(180deg, #f6f9fe 0%, #edf3fb 100%);
+        min-height: 100vh;
+      }
+
+      a {
+        color: inherit;
+        text-decoration: none;
+      }
+      img {
+        max-width: 100%;
+        display: block;
+      }
+      .container {
+        width: min(var(--max), calc(100% - 32px));
+        margin: 0 auto;
+      }
+
+      /* Top bar */
+      .topbar {
+        position: sticky;
+        top: 0;
+        z-index: 40;
+        backdrop-filter: blur(18px);
+        background: rgba(238, 243, 249, 0.72);
+        border-bottom: 1px solid rgba(15, 39, 71, 0.08);
+      }
+      .topbar-inner {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        gap: 16px;
+        padding: 14px 0;
+      }
+      .brand {
+        display: flex;
+        align-items: center;
+        gap: 12px;
+        min-width: 0;
+      }
+      .brand-badge {
+        width: 42px;
+        height: 42px;
+        border-radius: 14px;
+        background: linear-gradient(145deg, var(--primary), var(--primary-2));
+        box-shadow:
+          inset 0 1px 0 rgba(255, 255, 255, 0.16),
+          var(--shadow-soft);
+        display: grid;
+        place-items: center;
+        color: white;
+        flex: 0 0 auto;
+      }
+      .brand h1 {
+        font-size: 1rem;
+        margin: 0;
+        line-height: 1.2;
+        font-weight: 800;
+        white-space: nowrap;
+        overflow: hidden;
+        text-overflow: ellipsis;
+      }
+      .brand p {
+        margin: 3px 0 0;
+        color: var(--muted);
+        font-size: 0.88rem;
+        white-space: nowrap;
+        overflow: hidden;
+        text-overflow: ellipsis;
+      }
+      .nav {
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: flex-end;
+        gap: 8px;
+      }
+      .nav a {
+        font-size: 0.92rem;
+        font-weight: 600;
+        color: var(--primary);
+        padding: 10px 14px;
+        border-radius: 999px;
+        background: rgba(255, 255, 255, 0.65);
+        border: 1px solid rgba(15, 39, 71, 0.08);
+        transition:
+          transform 0.18s ease,
+          background 0.18s ease,
+          box-shadow 0.18s ease;
+      }
+      .nav a:hover {
+        transform: translateY(-1px);
+        box-shadow: var(--shadow-soft);
+        background: white;
+      }
+
+      /* Hero */
+      .hero {
+        padding: 28px 0 18px;
+      }
+      .hero-card {
+        border: 1px solid var(--border);
+        background: linear-gradient(
+          180deg,
+          rgba(255, 255, 255, 0.82),
+          rgba(255, 255, 255, 0.58)
+        );
+        backdrop-filter: blur(18px);
+        border-radius: 32px;
+        box-shadow: var(--shadow);
+        overflow: hidden;
+        position: relative;
+      }
+      .hero-card::before {
+        content: "";
+        position: absolute;
+        inset: 0;
+        background: linear-gradient(
+          130deg,
+          rgba(15, 39, 71, 0.05),
+          transparent 42%,
+          rgba(76, 135, 255, 0.08)
+        );
+        pointer-events: none;
+      }
+      .hero-grid {
+        position: relative;
+        display: grid;
+        grid-template-columns: 1.3fr 0.9fr;
+        gap: 22px;
+        padding: 28px;
+        align-items: center;
+      }
+      .eyebrow {
+        display: inline-flex;
+        align-items: center;
+        gap: 8px;
+        padding: 8px 12px;
+        background: rgba(15, 39, 71, 0.06);
+        color: var(--primary);
+        border: 1px solid rgba(15, 39, 71, 0.1);
+        border-radius: 999px;
+        font-size: 0.84rem;
+        font-weight: 700;
+        margin-bottom: 14px;
+      }
+      .hero h2 {
+        margin: 0;
+        font-size: clamp(2rem, 4vw, 4rem);
+        line-height: 1.02;
+        letter-spacing: -0.03em;
+        color: var(--primary);
+      }
+      .hero .subtitle {
+        margin: 14px 0 0;
+        font-size: 1.06rem;
+        line-height: 1.7;
+        color: var(--muted);
+        max-width: 62ch;
+      }
+      .pill-row {
+        display: flex;
+        flex-wrap: wrap;
+        gap: 10px;
+        margin-top: 18px;
+      }
+      .pill {
+        padding: 10px 14px;
+        background: rgba(255, 255, 255, 0.72);
+        border: 1px solid rgba(15, 39, 71, 0.1);
+        border-radius: 999px;
+        font-weight: 600;
+        font-size: 0.92rem;
+        color: var(--primary);
+        box-shadow: 0 8px 20px rgba(11, 28, 55, 0.05);
+      }
+      .hero-actions {
+        display: flex;
+        flex-wrap: wrap;
+        gap: 12px;
+        margin-top: 20px;
+      }
+      .btn {
+        display: inline-flex;
+        align-items: center;
+        justify-content: center;
+        gap: 10px;
+        border: 0;
+        border-radius: 16px;
+        padding: 14px 18px;
+        font-weight: 700;
+        cursor: pointer;
+        transition:
+          transform 0.18s ease,
+          box-shadow 0.18s ease,
+          opacity 0.18s ease;
+        box-shadow: var(--shadow-soft);
+        user-select: none;
+      }
+      .btn:hover {
+        transform: translateY(-1px);
+      }
+      .btn-primary {
+        background: linear-gradient(145deg, var(--primary), var(--primary-2));
+        color: white;
+      }
+      .btn-secondary {
+        background: white;
+        color: var(--primary);
+        border: 1px solid rgba(15, 39, 71, 0.12);
+      }
+      .hero-side {
+        display: grid;
+        gap: 14px;
+      }
+      .profile-card,
+      .metric-card,
+      .info-card,
+      .section-card {
+        background: rgba(255, 255, 255, 0.82);
+        backdrop-filter: blur(18px);
+        border: 1px solid rgba(15, 39, 71, 0.1);
+        border-radius: var(--radius);
+        box-shadow: var(--shadow-soft);
+      }
+      .profile-card {
+        padding: 18px;
+        display: grid;
+        gap: 14px;
+        text-align: center;
+      }
+      .avatar {
+        width: 122px;
+        height: 122px;
+        border-radius: 28px;
+        margin: 0 auto;
+        background: linear-gradient(160deg, #173c70, #5b8fe5);
+        box-shadow:
+          inset 0 1px 0 rgba(255, 255, 255, 0.18),
+          var(--shadow);
+        display: grid;
+        place-items: center;
+        color: white;
+        font-size: 2.8rem;
+        font-weight: 800;
+      }
+      .profile-card h3 {
+        margin: 0;
+        font-size: 1.16rem;
+        color: var(--primary);
+      }
+      .profile-card p {
+        margin: 0;
+        color: var(--muted);
+        line-height: 1.65;
+        font-size: 0.96rem;
+      }
+      .profile-meta {
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: center;
+        gap: 8px;
+      }
+      .profile-meta span {
+        padding: 8px 12px;
+        border-radius: 999px;
+        background: rgba(15, 39, 71, 0.06);
+        color: var(--primary);
+        font-weight: 700;
+        font-size: 0.83rem;
+      }
+
+      /* Stats */
+      .stats {
+        padding: 10px 0 4px;
+      }
+      .stats-grid {
+        display: grid;
+        grid-template-columns: repeat(4, 1fr);
+        gap: 14px;
+      }
+      .metric-card {
+        padding: 18px;
+        display: flex;
+        align-items: center;
+        gap: 14px;
+      }
+      .metric-icon {
+        width: 46px;
+        height: 46px;
+        border-radius: 16px;
+        background: rgba(15, 39, 71, 0.08);
+        color: var(--primary);
+        display: grid;
+        place-items: center;
+        flex: 0 0 auto;
+      }
+      .metric-card strong {
+        display: block;
+        font-size: 1.35rem;
+        line-height: 1;
+        color: var(--primary);
+      }
+      .metric-card span {
+        display: block;
+        margin-top: 4px;
+        color: var(--muted);
+        font-size: 0.92rem;
+        line-height: 1.35;
+      }
+
+      /* Sections */
+      .section {
+        padding: 18px 0;
+      }
+      .section-head {
+        display: flex;
+        justify-content: space-between;
+        align-items: end;
+        gap: 16px;
+        margin-bottom: 14px;
+      }
+      .section-head h3 {
+        margin: 0;
+        font-size: 1.55rem;
+        color: var(--primary);
+        letter-spacing: -0.02em;
+      }
+      .section-head p {
+        margin: 0;
+        color: var(--muted);
+        max-width: 70ch;
+        line-height: 1.6;
+      }
+
+      .section-card {
+        padding: 22px;
+      }
+
+      .two-col {
+        display: grid;
+        grid-template-columns: 1.1fr 0.9fr;
+        gap: 18px;
+      }
+      .about-text {
+        color: var(--muted);
+        line-height: 1.8;
+        font-size: 1rem;
+      }
+      .bullets {
+        display: grid;
+        gap: 10px;
+        margin: 16px 0 0;
+        padding: 0;
+        list-style: none;
+      }
+      .bullets li {
+        display: flex;
+        gap: 10px;
+        align-items: flex-start;
+        background: rgba(15, 39, 71, 0.04);
+        border: 1px solid rgba(15, 39, 71, 0.08);
+        border-radius: 16px;
+        padding: 12px 14px;
+        color: var(--primary);
+        line-height: 1.5;
+      }
+      .bullets i {
+        margin-top: 3px;
+        color: var(--primary-2);
+      }
+
+      .tag-cloud {
+        display: flex;
+        flex-wrap: wrap;
+        gap: 10px;
+      }
+      .tag {
+        padding: 10px 12px;
+        border-radius: 999px;
+        background: rgba(255, 255, 255, 0.88);
+        border: 1px solid rgba(15, 39, 71, 0.1);
+        color: var(--primary);
+        font-weight: 700;
+        font-size: 0.88rem;
+      }
+
+      /* Filters */
+      .filters {
+        display: flex;
+        flex-wrap: wrap;
+        gap: 10px;
+        margin: 14px 0 18px;
+      }
+      .filter-btn {
+        border: 1px solid rgba(15, 39, 71, 0.12);
+        background: rgba(255, 255, 255, 0.82);
+        color: var(--primary);
+        padding: 11px 14px;
+        border-radius: 999px;
+        font-weight: 700;
+        cursor: pointer;
+        transition: 0.18s ease;
+      }
+      .filter-btn:hover {
+        transform: translateY(-1px);
+        box-shadow: var(--shadow-soft);
+      }
+      .filter-btn.active {
+        background: linear-gradient(145deg, var(--primary), var(--primary-2));
+        color: white;
+        border-color: transparent;
+      }
+
+      /* Portfolio cards */
+      .portfolio-grid {
+        display: grid;
+        grid-template-columns: repeat(12, 1fr);
+        gap: 14px;
+      }
+      .card {
+        grid-column: span 4;
+        overflow: hidden;
+        position: relative;
+        min-height: 280px;
+      }
+      .card.wide {
+        grid-column: span 8;
+      }
+      .card.tall {
+        min-height: 342px;
+      }
+      .card .thumb {
+        height: 160px;
+        background:
+          linear-gradient(
+            135deg,
+            rgba(15, 39, 71, 0.92),
+            rgba(76, 135, 255, 0.75)
+          ),
+          radial-gradient(
+            circle at top right,
+            rgba(255, 255, 255, 0.28),
+            transparent 35%
+          );
+        display: flex;
+        align-items: flex-end;
+        justify-content: space-between;
+        padding: 18px;
+        color: white;
+        position: relative;
+      }
+      .thumb .type {
+        display: inline-flex;
+        align-items: center;
+        gap: 8px;
+        background: rgba(255, 255, 255, 0.12);
+        border: 1px solid rgba(255, 255, 255, 0.15);
+        border-radius: 999px;
+        padding: 8px 11px;
+        font-size: 0.82rem;
+        font-weight: 800;
+      }
+      .thumb .count {
+        font-size: 0.82rem;
+        background: rgba(255, 255, 255, 0.12);
+        border: 1px solid rgba(255, 255, 255, 0.15);
+        border-radius: 999px;
+        padding: 8px 11px;
+        font-weight: 700;
+      }
+      .card-body {
+        padding: 18px;
+        display: grid;
+        gap: 12px;
+      }
+      .card-body h4 {
+        margin: 0;
+        font-size: 1.18rem;
+        color: var(--primary);
+        letter-spacing: -0.02em;
+      }
+      .card-body p {
+        margin: 0;
+        color: var(--muted);
+        line-height: 1.65;
+        font-size: 0.95rem;
+      }
+      .mini {
+        display: flex;
+        flex-wrap: wrap;
+        gap: 8px;
+      }
+      .mini span {
+        padding: 8px 10px;
+        border-radius: 999px;
+        background: rgba(15, 39, 71, 0.06);
+        border: 1px solid rgba(15, 39, 71, 0.08);
+        color: var(--primary);
+        font-weight: 700;
+        font-size: 0.82rem;
+      }
+      .card-actions {
+        display: flex;
+        gap: 10px;
+        flex-wrap: wrap;
+        margin-top: auto;
+      }
+      .card-actions a {
+        display: inline-flex;
+        align-items: center;
+        gap: 8px;
+        padding: 11px 13px;
+        border-radius: 14px;
+        font-weight: 700;
+        font-size: 0.9rem;
+        border: 1px solid rgba(15, 39, 71, 0.12);
+        background: white;
+        color: var(--primary);
+      }
+      .card-actions a.primary {
+        background: var(--primary);
+        color: white;
+        border-color: transparent;
+      }
+      .hidden {
+        display: none !important;
+      }
+
+      /* Gallery */
+      .gallery-grid {
+        display: grid;
+        grid-template-columns: repeat(12, 1fr);
+        gap: 12px;
+      }
+      .shot {
+        grid-column: span 3;
+        border-radius: 22px;
+        overflow: hidden;
+        min-height: 170px;
+        background: linear-gradient(135deg, #1a3b69, #6a97df);
+        color: white;
+        position: relative;
+        box-shadow: var(--shadow-soft);
+        border: 1px solid rgba(255, 255, 255, 0.12);
+      }
+      .shot.large {
+        grid-column: span 6;
+        min-height: 240px;
+      }
+      .shot .shot-label {
+        position: absolute;
+        left: 14px;
+        right: 14px;
+        bottom: 14px;
+        padding: 12px 14px;
+        background: rgba(255, 255, 255, 0.12);
+        backdrop-filter: blur(10px);
+        border: 1px solid rgba(255, 255, 255, 0.14);
+        border-radius: 18px;
+        font-weight: 700;
+        line-height: 1.4;
+      }
+      .shot .shot-icon {
+        position: absolute;
+        top: 14px;
+        right: 14px;
+        width: 42px;
+        height: 42px;
+        border-radius: 14px;
+        background: rgba(255, 255, 255, 0.14);
+        display: grid;
+        place-items: center;
+        border: 1px solid rgba(255, 255, 255, 0.16);
+      }
+
+      /* Footer */
+      footer {
+        padding: 24px 0 36px;
+        color: var(--muted);
+      }
+      .footer-card {
+        padding: 18px 22px;
+        border-radius: 24px;
+        background: rgba(255, 255, 255, 0.72);
+        border: 1px solid rgba(15, 39, 71, 0.1);
+        box-shadow: var(--shadow-soft);
+        display: flex;
+        flex-wrap: wrap;
+        align-items: center;
+        justify-content: space-between;
+        gap: 12px;
+      }
+      .footer-card strong {
+        color: var(--primary);
+      }
+
+      /* Responsive */
+      @media (max-width: 1024px) {
+        .hero-grid,
+        .two-col {
+          grid-template-columns: 1fr;
+        }
+        .stats-grid {
+          grid-template-columns: repeat(2, 1fr);
+        }
+        .card {
+          grid-column: span 6;
+        }
+        .card.wide {
+          grid-column: span 12;
+        }
+        .shot {
+          grid-column: span 6;
+        }
+      }
+      @media (max-width: 720px) {
+        .topbar-inner {
+          flex-direction: column;
+          align-items: flex-start;
+        }
+        .nav {
+          justify-content: flex-start;
+        }
+        .hero-grid {
+          padding: 20px;
+        }
+        .section-card {
+          padding: 18px;
+        }
+        .stats-grid {
+          grid-template-columns: 1fr;
+        }
+        .card {
+          grid-column: span 12;
+        }
+        .shot {
+          grid-column: span 12;
+          min-height: 190px;
+        }
+        .shot.large {
+          grid-column: span 12;
+        }
+        .section-head {
+          align-items: flex-start;
+          flex-direction: column;
+        }
+      }
+    </style>
+  </head>
+  <body>
+    <header class="topbar">
+      <div class="container topbar-inner">
+        <div class="brand">
+          <div class="brand-badge">
+            <i data-lucide="sparkles" aria-hidden="true"></i>
+          </div>
           <div>
-            <div class="eyebrow"><i data-lucide="badge-check"></i> Portafolio profesional / Landing Page</div>
-            <h2>Desarrollo software, videojuegos y recursos educativos con enfoque técnico y visual.</h2>
-            <p class="subtitle">
-              Aquí puedes presentar tu perfil de forma limpia y moderna: una sola landing, visualmente ordenada, con proyectos agrupados por tipo de pieza. Tú solo rellenas los textos, ligas y nombres finales.
+            <h1>Roberto Calderón Amorós</h1>
+            <p>Software · Educación · Diseño</p>
+          </div>
+        </div>
+        <nav class="nav" aria-label="Navegación principal">
+          <a href="#sobre-mi">Sobre mí</a>
+          <a href="#portafolio">Portafolio</a>
+          <a href="#multimedia">Multimedia</a>
+          <a href="#contacto">Contacto</a>
+        </nav>
+      </div>
+    </header>
+
+    <main>
+      <section class="hero">
+        <div class="container hero-card">
+          <div class="hero-grid">
+            <div>
+              <div class="eyebrow">
+              <h2>
+                Desarrollador, docente y creativo interdisciplinario
+              </h2>
+              <p class="subtitle">
+
+                Soy docente universitario y creativo con más de 15 años de experiencia en desarrollo de software, videojuegos, diseño gráfico y producción multimedia. Me especializo en crear soluciones educativas y visuales que combinan tecnología y creatividad.
+              </p>
+              <div class="pill-row">
+                <span class="pill">Docencia universitaria</span>
+                <span class="pill">Software & apps</span>
+                <span class="pill">Videojuegos</span>
+                <span class="pill">Diseño gráfico</span>
+                <span class="pill">Anatomía / biomecánica</span>
+              </div>
+              <div class="hero-actions">
+                <a class="btn btn-primary" href="./CV.pdf" download>
+                  <i data-lucide="download"></i> Descargar CV
+                </a>
+                <a class="btn btn-secondary" href="#portafolio">
+                  <i data-lucide="layout-grid"></i> Ver portafolio
+                </a>
+              </div>
+            </div>
+
+            <aside class="hero-side">
+              <div class="profile-card">
+                <div class="avatar">RC</div>
+                <h3>Roberto Calderón Amorós</h3>
+                <p>
+                  Breve presentación de 2–4 líneas: quién eres, qué haces y por
+                  qué tu perfil es diferente.
+                </p>
+                <div class="profile-meta">
+                  <span>Sistemas</span>
+                  <span>Diseño</span>
+                  <span>Medicina</span>
+                  <span>Cibernética</span>
+                </div>
+              </div>
+            </aside>
+          </div>
+        </div>
+      </section>
+
+      <section class="stats">
+        <div class="container stats-grid">
+          <div class="metric-card">
+            <div class="metric-icon"><i data-lucide="school"></i></div>
+            <div><strong>15+</strong><span>Años en docencia</span></div>
+          </div>
+          <div class="metric-card">
+            <div class="metric-icon"><i data-lucide="code-xml"></i></div>
+            <div><strong>10+</strong><span>Tecnologías y stacks</span></div>
+          </div>
+          <div class="metric-card">
+            <div class="metric-icon"><i data-lucide="gamepad-2"></i></div>
+            <div><strong>1</strong><span>Videojuego destacado</span></div>
+          </div>
+          <div class="metric-card">
+            <div class="metric-icon"><i data-lucide="book-open"></i></div>
+            <div><strong>3</strong><span>Cursos en YouTube</span></div>
+          </div>
+        </div>
+      </section>
+
+      <section class="section" id="sobre-mi">
+        <div class="container section-head">
+          <div>
+            <h3>Sobre mí</h3>
+            <p>
+              Un bloque corto y claro, sin sonar a currículum infinito. Aquí
+              vende tu valor como perfil interdisciplinario.
             </p>
-            <div class="pill-row">
-              <span class="pill">Docencia universitaria</span>
-              <span class="pill">Software & apps</span>
-              <span class="pill">Videojuegos</span>
-              <span class="pill">Diseño gráfico</span>
-              <span class="pill">Anatomía / biomecánica</span>
-            </div>
-            <div class="hero-actions">
-              <a class="btn btn-primary" href="./CV.pdf" download>
-                <i data-lucide="download"></i> Descargar CV
-              </a>
-              <a class="btn btn-secondary" href="#portafolio">
-                <i data-lucide="layout-grid"></i> Ver portafolio
-              </a>
-            </div>
-          </div>
-
-          <aside class="hero-side">
-            <div class="profile-card">
-              <div class="avatar">RC</div>
-              <h3>Tu nombre aquí</h3>
-              <p>Breve presentación de 2–4 líneas: quién eres, qué haces y por qué tu perfil es diferente.</p>
-              <div class="profile-meta">
-                <span>Unity</span>
-                <span>.NET</span>
-                <span>Blender</span>
-                <span>UX/UI</span>
-              </div>
-            </div>
-          </aside>
-        </div>
-      </div>
-    </section>
-
-    <section class="stats">
-      <div class="container stats-grid">
-        <div class="metric-card">
-          <div class="metric-icon"><i data-lucide="school"></i></div>
-          <div><strong>15+</strong><span>Años en docencia</span></div>
-        </div>
-        <div class="metric-card">
-          <div class="metric-icon"><i data-lucide="code-xml"></i></div>
-          <div><strong>10+</strong><span>Tecnologías y stacks</span></div>
-        </div>
-        <div class="metric-card">
-          <div class="metric-icon"><i data-lucide="gamepad-2"></i></div>
-          <div><strong>1</strong><span>Videojuego destacado</span></div>
-        </div>
-        <div class="metric-card">
-          <div class="metric-icon"><i data-lucide="book-open"></i></div>
-          <div><strong>3</strong><span>Cursos en YouTube</span></div>
-        </div>
-      </div>
-    </section>
-
-    <section class="section" id="sobre-mi">
-      <div class="container section-head">
-        <div>
-          <h3>Sobre mí</h3>
-          <p>Un bloque corto y claro, sin sonar a currículum infinito. Aquí vende tu valor como perfil interdisciplinario.</p>
-        </div>
-      </div>
-      <div class="container section-card two-col">
-        <div>
-          <p class="about-text">
-            Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aquí colocas tu texto principal: quién eres, qué combinas, qué tipo de soluciones construyes y qué hace especial tu perfil.
-          </p>
-          <p class="about-text">
-            Puedes mencionar aquí tu enfoque en software educativo, videojuegos, simulación, diseño, anatomía/biomecánica, producción multimedia o lo que más te convenga destacar para la vacante o para tu marca profesional.
-          </p>
-          <ul class="bullets">
-            <li><i data-lucide="check-circle-2"></i> Perfil para tecnología, educación, simulación e ինտերactividad.</li>
-            <li><i data-lucide="check-circle-2"></i> Experiencia desarrollando soluciones reales y materiales didácticos.</li>
-            <li><i data-lucide="check-circle-2"></i> Enfoque en orden visual, claridad y presentación profesional.</li>
-          </ul>
-        </div>
-        <div>
-          <div class="tag-cloud" aria-label="Tecnologías destacadas">
-            <span class="tag">.NET</span>
-            <span class="tag">VB.NET</span>
-            <span class="tag">C#</span>
-            <span class="tag">Java</span>
-            <span class="tag">PHP</span>
-            <span class="tag">JavaScript</span>
-            <span class="tag">SQL Server</span>
-            <span class="tag">MySQL</span>
-            <span class="tag">Unity</span>
-            <span class="tag">Blender</span>
-            <span class="tag">UX/UI</span>
-            <span class="tag">Moodle</span>
           </div>
         </div>
-      </div>
-    </section>
-
-    <section class="section" id="portafolio">
-      <div class="container section-head">
-        <div>
-          <h3>Portafolio organizado por categorías</h3>
-          <p>Este es el corazón de la landing. La idea es convertir tu “desastre” de archivos en tarjetas limpias, filtrables y entendibles.</p>
-        </div>
-      </div>
-
-      <div class="container">
-        <div class="filters" role="tablist" aria-label="Filtros del portafolio">
-          <button class="filter-btn active" data-filter="all">Todo</button>
-          <button class="filter-btn" data-filter="video">Video</button>
-          <button class="filter-btn" data-filter="print">Impresos</button>
-          <button class="filter-btn" data-filter="web">Web / Cursos</button>
-          <button class="filter-btn" data-filter="game">Videojuegos</button>
-          <button class="filter-btn" data-filter="3d">3D</button>
-          <button class="filter-btn" data-filter="gallery">Galería</button>
-        </div>
-
-        <div class="portfolio-grid">
-          <article class="section-card card wide tall" data-category="video">
-            <div class="thumb">
-              <span class="type"><i data-lucide="clapperboard"></i> Demo Reel</span>
-              <span class="count">1 pieza</span>
-            </div>
-            <div class="card-body">
-              <h4>Demo reel profesional</h4>
-              <p>Video de presentación con tus mejores trabajos. Ideal para abrir tu portafolio y dar contexto inmediato a tu perfil.</p>
-              <div class="mini"><span>Video</span><span>Reel</span><span>Presentación</span></div>
-              <div class="card-actions">
-                <a class="primary" href="#" target="_blank" rel="noopener">Ver video</a>
-                <a href="#">Texto guía</a>
-              </div>
-            </div>
-          </article>
-
-          <article class="section-card card" data-category="print">
-            <div class="thumb">
-              <span class="type"><i data-lucide="file-image"></i> Cartel</span>
-              <span class="count">1 pieza</span>
-            </div>
-            <div class="card-body">
-              <h4>Cartel principal</h4>
-              <p>Coloca aquí tu cartel más representativo, con una descripción corta del objetivo y la técnica usada.</p>
-              <div class="mini"><span>Diseño</span><span>Impreso</span></div>
-              <div class="card-actions"><a class="primary" href="#">Abrir</a><a href="#">Ficha</a></div>
-            </div>
-          </article>
-
-          <article class="section-card card" data-category="print">
-            <div class="thumb">
-              <span class="type"><i data-lucide="book-open-text"></i> Tríptico</span>
-              <span class="count">1 pieza</span>
-            </div>
-            <div class="card-body">
-              <h4>Tríptico informativo</h4>
-              <p>Úsalo para mostrar capacidad de síntesis, jerarquía visual y composición editorial.</p>
-              <div class="mini"><span>Editorial</span><span>Comunicación</span></div>
-              <div class="card-actions"><a class="primary" href="#">Abrir</a><a href="#">Ficha</a></div>
-            </div>
-          </article>
-
-          <article class="section-card card" data-category="print">
-            <div class="thumb">
-              <span class="type"><i data-lucide="poster"></i> Posters</span>
-              <span class="count">2 piezas</span>
-            </div>
-            <div class="card-body">
-              <h4>Serie de posters</h4>
-              <p>Aquí puedes agrupar tus dos posters como una mini colección y mostrar consistencia estilística.</p>
-              <div class="mini"><span>Serie</span><span>Identidad</span></div>
-              <div class="card-actions"><a class="primary" href="#">Ver serie</a><a href="#">Ficha</a></div>
-            </div>
-          </article>
-
-          <article class="section-card card" data-category="web">
-            <div class="thumb">
-              <span class="type"><i data-lucide="film"></i> Flash</span>
-              <span class="count">1 ejecutable</span>
-            </div>
-            <div class="card-body">
-              <h4>Ejecutable Flash</h4>
-              <p>Si lo quieres conservar como legado, descríbelo aquí como proyecto interactivo histórico o material multimedia.</p>
-              <div class="mini"><span>Legacy</span><span>Interactivo</span></div>
-              <div class="card-actions"><a class="primary" href="#">Detalles</a><a href="#">Descarga</a></div>
-            </div>
-          </article>
-
-          <article class="section-card card" data-category="gallery">
-            <div class="thumb">
-              <span class="type"><i data-lucide="images"></i> Galería</span>
-              <span class="count">40 fotos</span>
-            </div>
-            <div class="card-body">
-              <h4>Galería fotográfica</h4>
-              <p>Convierte las 40 fotos en una galería tipo mosaico o en álbumes por proyecto, sin saturar la portada.</p>
-              <div class="mini"><span>Fotos</span><span>Álbum</span></div>
-              <div class="card-actions"><a class="primary" href="#multimedia">Ver galería</a><a href="#">Organizar</a></div>
-            </div>
-          </article>
-
-          <article class="section-card card wide" data-category="web">
-            <div class="thumb">
-              <span class="type"><i data-lucide="graduation-cap"></i> Cursos</span>
-              <span class="count">3 videos</span>
-            </div>
-            <div class="card-body">
-              <h4>Cursos en YouTube</h4>
-              <p>Lista tus tres cursos como tarjetas con miniatura, tema, duración y botón directo al canal o playlist.</p>
-              <div class="mini"><span>YouTube</span><span>Educación</span><span>Capacitación</span></div>
-              <div class="card-actions">
-                <a class="primary" href="#">Curso 1</a>
-                <a href="#">Curso 2</a>
-                <a href="#">Curso 3</a>
-              </div>
-            </div>
-          </article>
-
-          <article class="section-card card" data-category="game">
-            <div class="thumb">
-              <span class="type"><i data-lucide="gamepad-2"></i> Juego</span>
-              <span class="count">1 proyecto</span>
-            </div>
-            <div class="card-body">
-              <h4>Videojuego</h4>
-              <p>Esta tarjeta debería ser una de las más fuertes: motor usado, objetivo, capturas, video y descargas.</p>
-              <div class="mini"><span>Unity</span><span>Gameplay</span></div>
-              <div class="card-actions"><a class="primary" href="#">Ver juego</a><a href="#">Trailer</a></div>
-            </div>
-          </article>
-
-          <article class="section-card card" data-category="3d">
-            <div class="thumb">
-              <span class="type"><i data-lucide="box"></i> 3D</span>
-              <span class="count">Modelos</span>
-            </div>
-            <div class="card-body">
-              <h4>Modelos 3D sueltos</h4>
-              <p>Agrupa tus modelos por estilo o software: personajes, props, anatómicos, renders o escenas.</p>
-              <div class="mini"><span>Blender</span><span>Maya</span><span>3ds Max</span></div>
-              <div class="card-actions"><a class="primary" href="#multimedia">Ver modelos</a><a href="#">Detalles</a></div>
-            </div>
-          </article>
-        </div>
-      </div>
-    </section>
-
-    <section class="section" id="multimedia">
-      <div class="container section-head">
-        <div>
-          <h3>Galería visual</h3>
-          <p>En vez de mostrar 40 fotos de golpe, aquí puedes agrupar por tamaño y usar las mejores como portada visual.</p>
-        </div>
-      </div>
-      <div class="container section-card">
-        <div class="gallery-grid">
-          <div class="shot large">
-            <div class="shot-icon"><i data-lucide="camera"></i></div>
-            <div class="shot-label">Foto destacada / proyecto clave / portada de galería</div>
-          </div>
-          <div class="shot">
-            <div class="shot-icon"><i data-lucide="image"></i></div>
-            <div class="shot-label">Ilustración 1</div>
-          </div>
-          <div class="shot">
-            <div class="shot-icon"><i data-lucide="image"></i></div>
-            <div class="shot-label">Ilustración 2</div>
-          </div>
-          <div class="shot">
-            <div class="shot-icon"><i data-lucide="image"></i></div>
-            <div class="shot-label">Ilustración 3</div>
-          </div>
-          <div class="shot">
-            <div class="shot-icon"><i data-lucide="image"></i></div>
-            <div class="shot-label">Ilustración 4</div>
-          </div>
-          <div class="shot large">
-            <div class="shot-icon"><i data-lucide="play-circle"></i></div>
-            <div class="shot-label">Espacio para miniatura del demo reel o captura del juego</div>
-          </div>
-        </div>
-      </div>
-    </section>
-
-    <section class="section" id="contacto">
-      <div class="container section-head">
-        <div>
-          <h3>Contacto</h3>
-          <p>Coloca aquí tu correo, GitHub, LinkedIn, YouTube y cualquier medio que quieras priorizar en el QR del CV.</p>
-        </div>
-      </div>
-      <div class="container section-card two-col">
-        <div>
-          <div class="about-text">
-            Este bloque puede ser una versión más resumida de tu presentación, con un llamado claro a ver tu trabajo, descargar tu CV o revisar tus videos y proyectos.
-          </div>
-          <div class="hero-actions" style="margin-top:16px;">
-            <a class="btn btn-primary" href="mailto:tu-correo@ejemplo.com">
-              <i data-lucide="mail"></i> Correo
-            </a>
-            <a class="btn btn-secondary" href="https://github.com/" target="_blank" rel="noopener">
-              <i data-lucide="github"></i> GitHub
-            </a>
-            <a class="btn btn-secondary" href="https://www.linkedin.com/" target="_blank" rel="noopener">
-              <i data-lucide="briefcase-business"></i> LinkedIn
-            </a>
-          </div>
-        </div>
-        <div>
-          <div class="profile-card" style="text-align:left;">
-            <h3 style="text-align:left; margin:0;">Sugerencia de orden</h3>
-            <p style="text-align:left;">1) CV · 2) Proyectos · 3) Videojuego · 4) Simulación/3D · 5) Multimedia · 6) Contacto.</p>
+        <div class="container section-card two-col">
+          <div>
+            <p class="about-text">
+              Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aquí
+              colocas tu texto principal: quién eres, qué combinas, qué tipo de
+              soluciones construyes y qué hace especial tu perfil.
+            </p>
+            <p class="about-text">
+              Puedes mencionar aquí tu enfoque en software educativo,
+              videojuegos, simulación, diseño, anatomía/biomecánica, producción
+              multimedia o lo que más te convenga destacar para la vacante o
+              para tu marca profesional.
+            </p>
             <ul class="bullets">
-              <li><i data-lucide="folder-open"></i> Usa nombres de archivo claros: <strong>demo_reel.mp4</strong>, <strong>poster_01.pdf</strong>, <strong>juego_build.zip</strong>.</li>
-              <li><i data-lucide="file-text"></i> Cada tarjeta puede abrir a una carpeta, video o PDF específico.</li>
-              <li><i data-lucide="qr-code"></i> El QR del CV puede apuntar a esta landing sin cambiarla cada vez.</li>
+              <li>
+                <i data-lucide="check-circle-2"></i> Perfil para tecnología,
+                educación, simulación e interactividad.
+              </li>
+              <li>
+                <i data-lucide="check-circle-2"></i> Experiencia desarrollando
+                soluciones reales y materiales didácticos.
+              </li>
+              <li>
+                <i data-lucide="check-circle-2"></i> Enfoque en orden visual,
+                claridad y presentación profesional.
+              </li>
             </ul>
           </div>
+          <div>
+            <div class="tag-cloud" aria-label="Tecnologías destacadas">
+              <span class="tag">.NET</span>
+              <span class="tag">VB.NET</span>
+              <span class="tag">C#</span>
+              <span class="tag">Java</span>
+              <span class="tag">PHP</span>
+              <span class="tag">JavaScript</span>
+              <span class="tag">SQL Server</span>
+              <span class="tag">MySQL</span>
+              <span class="tag">Unity</span>
+              <span class="tag">Blender</span>
+              <span class="tag">UX/UI</span>
+              <span class="tag">Moodle</span>
+            </div>
+          </div>
         </div>
+      </section>
+
+      <section class="section" id="portafolio">
+        <div class="container section-head">
+          <div>
+            <h3>Portafolio organizado por categorías</h3>
+            <p>
+              Este es el corazón de la landing. La idea es convertir tu
+              “desastre” de archivos en tarjetas limpias, filtrables y
+              entendibles.
+            </p>
+          </div>
+        </div>
+
+        <div class="container">
+          <div
+            class="filters"
+            role="tablist"
+            aria-label="Filtros del portafolio"
+          >
+            <button class="filter-btn active" data-filter="all">Todo</button>
+            <button class="filter-btn" data-filter="video">Video</button>
+            <button class="filter-btn" data-filter="print">Impresos</button>
+            <button class="filter-btn" data-filter="web">Web / Cursos</button>
+            <button class="filter-btn" data-filter="game">Videojuegos</button>
+            <button class="filter-btn" data-filter="3d">3D</button>
+            <button class="filter-btn" data-filter="gallery">Galería</button>
+          </div>
+
+          <div class="portfolio-grid">
+            <article class="section-card card wide tall" data-category="video">
+              <div class="thumb">
+                <span class="type"
+                  ><i data-lucide="clapperboard"></i> Demo Reel</span
+                >
+                <span class="count">1 pieza</span>
+              </div>
+              <div class="card-body">
+                <h4>Demo reel profesional</h4>
+                <p>
+                  Video de presentación con tus mejores trabajos. Ideal para
+                  abrir tu portafolio y dar contexto inmediato a tu perfil.
+                </p>
+                <div class="mini">
+                  <span>Video</span><span>Reel</span><span>Presentación</span>
+                </div>
+                <div class="card-actions">
+                  <a class="primary" href="#" target="_blank" rel="noopener"
+                    >Ver video</a
+                  >
+                  <a href="#">Texto guía</a>
+                </div>
+              </div>
+            </article>
+
+            <article class="section-card card" data-category="print">
+              <div class="thumb">
+                <span class="type"
+                  ><i data-lucide="file-image"></i> Cartel</span
+                >
+                <span class="count">1 pieza</span>
+              </div>
+              <div class="card-body">
+                <h4>Cartel principal</h4>
+                <p>
+                  Coloca aquí tu cartel más representativo, con una descripción
+                  corta del objetivo y la técnica usada.
+                </p>
+                <div class="mini"><span>Diseño</span><span>Impreso</span></div>
+                <div class="card-actions">
+                  <a class="primary" href="#">Abrir</a><a href="#">Ficha</a>
+                </div>
+              </div>
+            </article>
+
+            <article class="section-card card" data-category="print">
+              <div class="thumb">
+                <span class="type"
+                  ><i data-lucide="book-open-text"></i> Tríptico</span
+                >
+                <span class="count">1 pieza</span>
+              </div>
+              <div class="card-body">
+                <h4>Tríptico informativo</h4>
+                <p>
+                  Úsalo para mostrar capacidad de síntesis, jerarquía visual y
+                  composición editorial.
+                </p>
+                <div class="mini">
+                  <span>Editorial</span><span>Comunicación</span>
+                </div>
+                <div class="card-actions">
+                  <a class="primary" href="#">Abrir</a><a href="#">Ficha</a>
+                </div>
+              </div>
+            </article>
+
+            <article class="section-card card" data-category="print">
+              <div class="thumb">
+                <span class="type"><i data-lucide="poster"></i> Posters</span>
+                <span class="count">2 piezas</span>
+              </div>
+              <div class="card-body">
+                <h4>Serie de posters</h4>
+                <p>
+                  Aquí puedes agrupar tus dos posters como una mini colección y
+                  mostrar consistencia estilística.
+                </p>
+                <div class="mini"><span>Serie</span><span>Identidad</span></div>
+                <div class="card-actions">
+                  <a class="primary" href="#">Ver serie</a><a href="#">Ficha</a>
+                </div>
+              </div>
+            </article>
+
+            <article class="section-card card" data-category="web">
+              <div class="thumb">
+                <span class="type"><i data-lucide="film"></i> Flash</span>
+                <span class="count">1 ejecutable</span>
+              </div>
+              <div class="card-body">
+                <h4>Ejecutable Flash</h4>
+                <p>
+                  Si lo quieres conservar como legado, descríbelo aquí como
+                  proyecto interactivo histórico o material multimedia.
+                </p>
+                <div class="mini">
+                  <span>Legacy</span><span>Interactivo</span>
+                </div>
+                <div class="card-actions">
+                  <a class="primary" href="#">Detalles</a
+                  ><a href="#">Descarga</a>
+                </div>
+              </div>
+            </article>
+
+            <article class="section-card card" data-category="gallery">
+              <div class="thumb">
+                <span class="type"><i data-lucide="images"></i> Galería</span>
+                <span class="count">40 fotos</span>
+              </div>
+              <div class="card-body">
+                <h4>Galería fotográfica</h4>
+                <p>
+                  Convierte las 40 fotos en una galería tipo mosaico o en
+                  álbumes por proyecto, sin saturar la portada.
+                </p>
+                <div class="mini"><span>Fotos</span><span>Álbum</span></div>
+                <div class="card-actions">
+                  <a class="primary" href="#multimedia">Ver galería</a
+                  ><a href="#">Organizar</a>
+                </div>
+              </div>
+            </article>
+
+            <article class="section-card card wide" data-category="web">
+              <div class="thumb">
+                <span class="type"
+                  ><i data-lucide="graduation-cap"></i> Cursos</span
+                >
+                <span class="count">3 videos</span>
+              </div>
+              <div class="card-body">
+                <h4>Cursos en YouTube</h4>
+                <p>
+                  Lista tus tres cursos como tarjetas con miniatura, tema,
+                  duración y botón directo al canal o playlist.
+                </p>
+                <div class="mini">
+                  <span>YouTube</span><span>Educación</span
+                  ><span>Capacitación</span>
+                </div>
+                <div class="card-actions">
+                  <a class="primary" href="#">Curso 1</a>
+                  <a href="#">Curso 2</a>
+                  <a href="#">Curso 3</a>
+                </div>
+              </div>
+            </article>
+
+            <article class="section-card card" data-category="game">
+              <div class="thumb">
+                <span class="type"><i data-lucide="gamepad-2"></i> Juego</span>
+                <span class="count">1 proyecto</span>
+              </div>
+              <div class="card-body">
+                <h4>Videojuego</h4>
+                <p>
+                  Esta tarjeta debería ser una de las más fuertes: motor usado,
+                  objetivo, capturas, video y descargas.
+                </p>
+                <div class="mini"><span>Unity</span><span>Gameplay</span></div>
+                <div class="card-actions">
+                  <a class="primary" href="#">Ver juego</a
+                  ><a href="#">Trailer</a>
+                </div>
+              </div>
+            </article>
+
+            <article class="section-card card" data-category="3d">
+              <div class="thumb">
+                <span class="type"><i data-lucide="box"></i> 3D</span>
+                <span class="count">Modelos</span>
+              </div>
+              <div class="card-body">
+                <h4>Modelos 3D sueltos</h4>
+                <p>
+                  Agrupa tus modelos por estilo o software: personajes, props,
+                  anatómicos, renders o escenas.
+                </p>
+                <div class="mini">
+                  <span>Blender</span><span>Maya</span><span>3ds Max</span>
+                </div>
+                <div class="card-actions">
+                  <a class="primary" href="#multimedia">Ver modelos</a
+                  ><a href="#">Detalles</a>
+                </div>
+              </div>
+            </article>
+          </div>
+        </div>
+      </section>
+
+      <section class="section" id="multimedia">
+        <div class="container section-head">
+          <div>
+            <h3>Galería visual</h3>
+            <p>
+              En vez de mostrar 40 fotos de golpe, aquí puedes agrupar por
+              tamaño y usar las mejores como portada visual.
+            </p>
+          </div>
+        </div>
+        <div class="container section-card">
+          <div class="gallery-grid">
+            <div class="shot large">
+              <div class="shot-icon"><i data-lucide="camera"></i></div>
+              <div class="shot-label">
+                Foto destacada / proyecto clave / portada de galería
+              </div>
+            </div>
+            <div class="shot">
+              <div class="shot-icon"><i data-lucide="image"></i></div>
+              <div class="shot-label">Ilustración 1</div>
+            </div>
+            <div class="shot">
+              <div class="shot-icon"><i data-lucide="image"></i></div>
+              <div class="shot-label">Ilustración 2</div>
+            </div>
+            <div class="shot">
+              <div class="shot-icon"><i data-lucide="image"></i></div>
+              <div class="shot-label">Ilustración 3</div>
+            </div>
+            <div class="shot">
+              <div class="shot-icon"><i data-lucide="image"></i></div>
+              <div class="shot-label">Ilustración 4</div>
+            </div>
+            <div class="shot large">
+              <div class="shot-icon"><i data-lucide="play-circle"></i></div>
+              <div class="shot-label">
+                Espacio para miniatura del demo reel o captura del juego
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <section class="section" id="contacto">
+        <div class="container section-head">
+          <div>
+            <h3>Contacto</h3>
+            <p>
+              Coloca aquí tu correo, GitHub, LinkedIn, YouTube y cualquier medio
+              que quieras priorizar en el QR del CV.
+            </p>
+          </div>
+        </div>
+        <div class="container section-card two-col">
+          <div>
+            <div class="about-text">
+              Este bloque puede ser una versión más resumida de tu presentación,
+              con un llamado claro a ver tu trabajo, descargar tu CV o revisar
+              tus videos y proyectos.
+            </div>
+            <div class="hero-actions" style="margin-top: 16px">
+              <a class="btn btn-primary" href="mailto:tu-correo@ejemplo.com">
+                <i data-lucide="mail"></i> Correo
+              </a>
+              <a
+                class="btn btn-secondary"
+                href="https://github.com/"
+                target="_blank"
+                rel="noopener"
+              >
+                <i data-lucide="github"></i> GitHub
+              </a>
+              <a
+                class="btn btn-secondary"
+                href="https://www.linkedin.com/"
+                target="_blank"
+                rel="noopener"
+              >
+                <i data-lucide="briefcase-business"></i> LinkedIn
+              </a>
+            </div>
+          </div>
+          <div>
+            <div class="profile-card" style="text-align: left">
+              <h3 style="text-align: left; margin: 0">Sugerencia de orden</h3>
+              <p style="text-align: left">
+                1) CV · 2) Proyectos · 3) Videojuego · 4) Simulación/3D · 5)
+                Multimedia · 6) Contacto.
+              </p>
+              <ul class="bullets">
+                <li>
+                  <i data-lucide="folder-open"></i> Usa nombres de archivo
+                  claros: <strong>demo_reel.mp4</strong>,
+                  <strong>poster_01.pdf</strong>,
+                  <strong>juego_build.zip</strong>.
+                </li>
+                <li>
+                  <i data-lucide="file-text"></i> Cada tarjeta puede abrir a una
+                  carpeta, video o PDF específico.
+                </li>
+                <li>
+                  <i data-lucide="qr-code"></i> El QR del CV puede apuntar a
+                  esta landing sin cambiarla cada vez.
+                </li>
+              </ul>
+            </div>
+          </div>
+        </div>
+      </section>
+    </main>
+
+    <footer>
+      <div class="container footer-card">
+        <div>Roberto Calderón Amorós · Algunos derechos reservados · 2026</div>
       </div>
-    </section>
-  </main>
+    </footer>
 
-  <footer>
-    <div class="container footer-card">
-      <div><strong>Portafolio profesional</strong> · Landing lista para GitHub Pages</div>
-      <div>Hecho para ordenar tu material sin gastar dinero ni crear una web compleja.</div>
-    </div>
-  </footer>
+    <script>
+      lucide.createIcons();
 
-  <script>
-    lucide.createIcons();
+      const filterButtons = document.querySelectorAll(".filter-btn");
+      const cards = document.querySelectorAll(".portfolio-grid .card");
 
-    const filterButtons = document.querySelectorAll('.filter-btn');
-    const cards = document.querySelectorAll('.portfolio-grid .card');
+      filterButtons.forEach((btn) => {
+        btn.addEventListener("click", () => {
+          filterButtons.forEach((b) => b.classList.remove("active"));
+          btn.classList.add("active");
 
-    filterButtons.forEach(btn => {
-      btn.addEventListener('click', () => {
-        filterButtons.forEach(b => b.classList.remove('active'));
-        btn.classList.add('active');
-
-        const filter = btn.dataset.filter;
-        cards.forEach(card => {
-          const category = card.dataset.category;
-          const show = filter === 'all' || filter === category;
-          card.classList.toggle('hidden', !show);
+          const filter = btn.dataset.filter;
+          cards.forEach((card) => {
+            const category = card.dataset.category;
+            const show = filter === "all" || filter === category;
+            card.classList.toggle("hidden", !show);
+          });
         });
       });
-    });
-  </script>
-</body>
+    </script>
+  </body>
 </html>
