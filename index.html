@@ -185,7 +185,7 @@
                   <a href="#" class="ctc-edge-chip">#Impreso</a>
                 </div>
                 <div class="card-actions">
-                  <a class="primary" href="#">Abrir</a
+                  <a class="primary" href="assets/cartel.jpg" target="_blank">Visualizar</a
                   >
                 </div>
               </div>
@@ -199,11 +199,13 @@
                   class="thumb-img"
                   loading="lazy"
                 />
-              </div>
+                <span class="type"
+                  ><i data-lucide="globe"></i> Cursos en línea</span>
+                </div>
               <div class="card-body">
                 <h4>Cursos en YouTube</h4>
                 <p>
-                  Tres cursos grabados como material de apoyo para clases, sobre temas de diseño, programación y modelado 3D básico.
+                  Muestra de los cursos grabados como material de apoyo para mis clases, sobre temas de diseño, programación y modelado 3D básico.
                 </p>
                 <div class="ctc-edge">
                   <a href="#" class="ctc-edge-chip">#Diseño</a>
@@ -212,7 +214,7 @@
                 </div>
                 <div class="card-actions">
                   <a class="primary" href="https://www.youtube.com/watch?v=tVpZ30C8bew" target="_blank">Curso InDesing</a>
-                  <a href="https://www.youtube.com/watch?v=ax_mwBb1oBE" target="_blank">Curso Vb.NET</a>
+                  <a href="https://www.youtube.com/watch?v=ax_mwBb1oBE" target="_blank">Curso demo Vb.NET</a>
                   <a href="https://www.youtube.com/playlist?list=PLRC_0APJuLLM" target="_blank">Curso 3DS MAX</a>
                 </div>
               </div>
@@ -258,8 +260,7 @@
                   <a href="#" class="ctc-edge-chip">#Legacy</a>
                 </div>
                 <div class="card-actions">
-                  <a class="primary" href="https://web.archive.org/web/20061009082022/http:/mx.geocities.com/sephirot_sammael/">Visitar</a
-                  ><a href="#">Detalles</a>
+                  <a class="primary" href="https://web.archive.org/web/20061009082022/http:/mx.geocities.com/sephirot_sammael/">Visitar</a>
                 </div>
               </div>
             </article>
@@ -281,19 +282,29 @@
             role="tablist"
             aria-label="Categorías de la galería"
           >
+            <button class="filter-btn" data-panel="panel-proyectos">
+              <i data-lucide="folder-kanban"></i> Proyectos de Software
+            </button>
             <button class="filter-btn active" data-panel="panel-fotografia">
               <i data-lucide="camera"></i> Fotografía
             </button>
             <button class="filter-btn" data-panel="panel-ilustraciones">
               <i data-lucide="palette"></i> Ilustraciones
             </button>
-            <button class="filter-btn" data-panel="panel-proyectos">
-              <i data-lucide="folder-kanban"></i> Proyectos de Software
-            </button>
             <button class="filter-btn" data-panel="panel-evidencias">
               <i data-lucide="file-check-2"></i> Evidencias de trabajo
             </button>
           </div>
+
+            <div class="gallery-panel" id="panel-proyectos">
+              <div class="gallery-panel-head">
+                <p>
+                  Capturas de proyectos de software individuales.
+                </p>
+                <span class="gallery-progress">0 de 0 agregadas</span>
+              </div>
+              <div class="gallery-grid"></div>
+            </div>
 
           <div class="section-card">
             <div class="gallery-panel active" id="panel-fotografia">
@@ -307,16 +318,6 @@
             <div class="gallery-panel" id="panel-ilustraciones">
               <div class="gallery-panel-head">
                 <p>Ilustración digital y tradicional.</p>
-                <span class="gallery-progress">0 de 0 agregadas</span>
-              </div>
-              <div class="gallery-grid"></div>
-            </div>
-
-            <div class="gallery-panel" id="panel-proyectos">
-              <div class="gallery-panel-head">
-                <p>
-                  Capturas de proyectos de software individuales.
-                </p>
                 <span class="gallery-progress">0 de 0 agregadas</span>
               </div>
               <div class="gallery-grid"></div>
