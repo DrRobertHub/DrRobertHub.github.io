@@ -58,7 +58,7 @@ window.PORTFOLIO_DATA = {
   proyectos: buildGalleryItems({
     folder: "assets/proyectos",
     prefix: "proyecto",
-    count: 10,
+    count: 8,
     label: "Proyecto",
     captions: {
       // 1: "Sistema de gestión escolar — pantalla principal",
