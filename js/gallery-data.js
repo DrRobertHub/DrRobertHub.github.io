@@ -71,7 +71,14 @@ window.PORTFOLIO_DATA = {
     count: 8,
     label: "Evidencia de trabajo",
     captions: {
-      // 1: "Constancia de curso impartido, 2023",
+      1: "Cierre de jornada CFE - Suterm, representando a la UMF-22 (2024)",
+      2: "Conferencia sobre enfermedades crónico degenerativas",
+      3: "Platica sobre alimentación saludable, CFE (2024)",
+      4: "Plática sobre salud en el trabajo, Minera Autlán (2024)",
+      5: "Feria de la salud, Tecnológico de Zacapoaxtla (2024)",
+      6: "Jurado en la Expo proyectos de innovación, Universidad Hispana (diciembre 2015)",
+      7: "Participación en el taller 'De lo abstracto a lo figurativo' impartido por el diseñador y cartelista Francisco Paco Galvez (2013)",
+      8: "Con el conductor del programa de radio 'Apague la Luz y Escuche', Braulio Daza, en la estación de radio XEOL Radio Impacto (2008)",
     },
   }),
 };
