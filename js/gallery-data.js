@@ -38,7 +38,7 @@ window.PORTFOLIO_DATA = {
   fotografia: buildGalleryItems({
     folder: "assets/fotografia",
     prefix: "foto",
-    count: 40,
+    count: 24,
     label: "Fotografía",
     captions: {
       // 1: "Sesión de retrato, estudio 2024",
