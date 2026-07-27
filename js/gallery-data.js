@@ -48,7 +48,7 @@ window.PORTFOLIO_DATA = {
   ilustraciones: buildGalleryItems({
     folder: "assets/ilustraciones",
     prefix: "ilustracion",
-    count: 10,
+    count: 8,
     label: "Ilustración",
     captions: {
       // 1: "Personaje original — línea y color digital",
@@ -58,7 +58,7 @@ window.PORTFOLIO_DATA = {
   proyectos: buildGalleryItems({
     folder: "assets/proyectos",
     prefix: "proyecto",
-    count: 8,
+    count: 10,
     label: "Proyecto",
     captions: {
       // 1: "Sistema de gestión escolar — pantalla principal",
