@@ -35,6 +35,16 @@ function buildGalleryItems({ folder, prefix, count, ext = "jpg", label, captions
 }
 
 window.PORTFOLIO_DATA = {
+    proyectos: buildGalleryItems({
+    folder: "assets/proyectos",
+    prefix: "proyecto",
+    count: 8,
+    label: "Proyecto",
+    captions: {
+      // 1: "Sistema de gestión escolar — pantalla principal",
+    },
+  }),
+  
   fotografia: buildGalleryItems({
     folder: "assets/fotografia",
     prefix: "foto",
@@ -52,16 +62,6 @@ window.PORTFOLIO_DATA = {
     label: "Ilustración",
     captions: {
       // 1: "Personaje original — línea y color digital",
-    },
-  }),
-
-  proyectos: buildGalleryItems({
-    folder: "assets/proyectos",
-    prefix: "proyecto",
-    count: 8,
-    label: "Proyecto",
-    captions: {
-      // 1: "Sistema de gestión escolar — pantalla principal",
     },
   }),
 
